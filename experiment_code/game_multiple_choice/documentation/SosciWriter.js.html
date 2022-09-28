@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: SosciWriter.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-Slider.html">Slider</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Button.html">Button</a></li><li><a href="Card.html">Card</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="Dialogue.html">Dialogue</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExplainScene.html">ExplainScene</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="MissingPanel.html">MissingPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Slider-Slider.html">Slider~Slider</a></li><li><a href="module-Slider-SliderComponent.html">Slider~SliderComponent</a></li><li><a href="NewsDialogue.html">NewsDialogue</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="OkayScene.html">OkayScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="Player.html">Player</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="SummaryScene.html">SummaryScene</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Timer.html">Timer</a></li><li><a href="UI.html">UI</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="WarningScene.html">WarningScene</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: SosciWriter.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import * as Constants from './Constants.js';
+/**
+ * @description
+ * This module provides function that are used to write variables to SosciSurvey.
+ * @module SosciWriter
+ */
+  
+/**
+ * Write the Profit into the corresponding intern variable.
+ * @param {string} target the target. Could be 'player' or 'model' and specifies if the profit
+ * should be added to the player or to the model.
+ * @param {int} month the number of the month starting from 0.
+ * @param {int} profit the profit of the model or player for the given month.
+ */
+function writeProfit(target,month,profit){
+    let variable = getVariable(getTarget(target)+Constants.SOSCI_PROFIT, month+1);
+    writeValue(variable, profit);
+}
+
+/**
+ * This function is used to write the answers of a user to the corresponding 
+ * SosciSurvey variable.
+ * The Variable specified at [SOSCI_ANSWER]{@link module:GameProperties#SOSCI_ANSWER} is used as the 
+ * variable where the answers are stored. To assign the answers, question numbers are used, corresponding
+ * to the items at SosciSurvey.
+ * @param {number} questionNumber the question number to specify to which item the user's text should be written.
+ * @param {String} answer the answer of the user. 
+ */
+export function writeAnswer(questionNumber, answer)
+{
+    let variable = getVariable(Constants.SOSCI_ANSWER, questionNumber);
+    writeValue(variable, answer);
+}
+{
+
+}
+
+/**
+ * Write the production status to SosciSurvey. This is helpful to get an idea
+ * if the player has been interrupted during the change of a month, which
+ * could serve as an indication that the available time per month should be adjusted.
+ * @param {int} month the number of the month starting from 0.
+ * @param {boolean} status set true, if the player was producing during the month change,
+ *                  false if not.
+ */
+export function writeProducingStatus(month, status)
+{
+    let variable = getVariable(Constants.SOSCI_PLAYER_VAR+Constants.SOSCI_WAS_PRODUCING, month+1);
+    writeValue(variable, status);
+}
+
+/**
+ * Write the number of produced item for a given month to the corresponding 
+ * SosciSurvey variable.
+ * 
+ * EXAMPLE: writeProducedItems('player', 0, {
+ *                                      beds: 1,
+ *                                      bookcases: 30,
+ *                                      tables: 20,
+ *                                      chairs: 15
+ *                                      });
+ * Writes the given amount of items to the player variable for the month january.
+ * @param {string} target Could be 'player' or 'model' and defines, if the value should be
+ * written to a player or to a model variable.
+ * @param {int} month the number of the month starting from 0.
+ * @param {Object} items an object containing the item numbers.
+ * Must contain the keys 'beds', 'bookcases', 'tables', 'chairs'.
+ */
+export function writeProducedItems(target,month,items){
+    let _target = getTarget(target);
+    let beds = getVariable(_target+Constants.SOSCI_BEDS,month+1);
+    let bookcases = getVariable(_target+Constants.SOSCI_BOOKCASES,month+1);
+    let tables = getVariable(_target+Constants.SOSCI_TABLES,month+1);
+    let chairs = getVariable(_target+Constants.SOSCI_CHAIRS,month+1);
+    writeValue(beds, items.beds);
+    writeValue(bookcases, items.bookcases);
+    writeValue(tables, items.tables);
+    writeValue(chairs, items.chairs);
+}
+
+
+/**
+ * Writes the elapsed time to the corresponding SosciSurvey variable.
+ * @param {int} month the month to specify the Sosci variable
+ * @param {int} time the elapsed time to store in milliseconds
+ */
+export function writeTime(month, time){
+    let variable = getVariable(Constants.SOSCI_PLAYER_TIME_VAR,month+1);
+    writeValue(variable, time);
+}
+
+/**
+ * Write a value to a given SosciSurvey variable
+ * @param {object} variable a dom object obtained by getVariable().
+ * @param {*} value the value that should be written inside the given variable.
+ */
+function writeValue(variable, value){
+    variable.value = value;
+}
+
+
+/**
+ * Returns a DOM object of the given variable. 
+ * EXAMPLE: getVariable('PL01',1) returns the intern SosciSurvey variable 'PL01_01'
+ * @param {string} varName The name of the intern variable. Must be the same as in SosciSurvey.
+ * @param {int} varNumber The number of the item inside the intern variable.
+ */
+function getVariable(varName, varNumber){
+    return document.getElementById(varName+'_'+varNumber.toString().padStart(2,'0'));
+}
+
+/**
+ * Get the variable name of a Sosci Survey variable given the intuitive name.
+ * @param {string} target the target that should be converted to the 
+ *                SosciSurvey variable. Could be 'player' or 'model'.
+ */
+function getTarget(target){
+    if (target === 'player'){
+        return Constants.SOSCI_PLAYER_VAR;
+    }else if (target === 'model'){
+        return Constants.SOSCI_MODEL_VAR;
+    }
+}
+
+/**
+ * Disables the 'next' button.
+ */
+export function disableNextButton(){
+    SoSciTools.submitButtonsHide();
+}
+
+/**
+ * Submits the recorded values to SosciSurvey.
+ */
+export function submit(){
+    SoSciTools.submitPage();
+}
+
+/**
+ * Write the final log to the corresponding SoSci Variable.
+ * @param {string} log the log string containing the actions of the Player.
+ * @see EventDispatcher
+ */
+export function writeLog(log)
+{
+    let variable = document.getElementById(Constants.SOSCI_LOG);
+    writeValue(variable,log);
+}
+
+export {writeProfit};</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 21.07.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: WarningDialogue.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-Item.html">Item</a></li><li><a href="module-ItemPanel.html">ItemPanel</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li><li><a href="module-Storage.html">Storage</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="AiDialogue.html">AiDialogue</a></li><li><a href="AssesmentDialogue.html">AssesmentDialogue</a></li><li><a href="Building.html">Building</a></li><li><a href="Button.html">Button</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="DialogueScheduler.html">DialogueScheduler</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="FeedbackDialogue.html">FeedbackDialogue</a></li><li><a href="FeedbackSummary.html">FeedbackSummary</a></li><li><a href="FinalSummary.html">FinalSummary</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="InformerBanner.html">InformerBanner</a></li><li><a href="InteractionScene.html">InteractionScene</a></li><li><a href="LikertScale.html">LikertScale</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="Management.html">Management</a></li><li><a href="ManagementDialogue.html">ManagementDialogue</a></li><li><a href="Market.html">Market</a></li><li><a href="MarketDialogue.html">MarketDialogue</a></li><li><a href="MessageDialogue.html">MessageDialogue</a></li><li><a href="module-ItemPanel-ItemDisplay.html">ItemPanel~ItemDisplay</a></li><li><a href="module-ItemPanel-ItemPanel.html">ItemPanel~ItemPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Item-Item.html">Item~Item</a></li><li><a href="module-Storage-StorageEntry.html">Storage~StorageEntry</a></li><li><a href="module-Storage-StoragePanel.html">Storage~StoragePanel</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="PartDisplay.html">PartDisplay</a></li><li><a href="Player.html">Player</a></li><li><a href="Preloader.html">Preloader</a></li><li><a href="Process.html">Process</a></li><li><a href="ProfitSummary.html">ProfitSummary</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="ProgressBarVertical.html">ProgressBarVertical</a></li><li><a href="RadioButton.html">RadioButton</a></li><li><a href="Storage.html">Storage</a></li><li><a href="StorageDialogue.html">StorageDialogue</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Tutorial.html">Tutorial</a></li><li><a href="Ui.html">Ui</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="Workshop.html">Workshop</a></li><li><a href="WorkshopDialogue.html">WorkshopDialogue</a></li><li><a href="WorkshopQueue.html">WorkshopQueue</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#addBars">addBars</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#done">done</a></li><li><a href="global.html#getAllOptimalProfits">getAllOptimalProfits</a></li><li><a href="global.html#getMonthOptimalProfit">getMonthOptimalProfit</a></li><li><a href="global.html#interrupt">interrupt</a></li><li><a href="global.html#preload">preload</a></li><li><a href="global.html#resetHours">resetHours</a></li><li><a href="global.html#setMeterPercentage">setMeterPercentage</a></li><li><a href="global.html#setProduceAnimation">setProduceAnimation</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#work">work</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: WarningDialogue.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import InteractionScene from './InteractionScene.js';
+import Button from './Button.js';
+import {TEXTDIALOGUE_WIDTH, TEXTDIALOGUE_HEIGHT} from './Constants.js'
+/**
+ * @classdesc
+ * This class asks the player if he or she is sure to proceed.
+ * It can be used if the player skips a month without having produced anything
+ * of if it is tryed to skip the month while workshops are still producing.
+ * In order to make this dialogue work, the data dictionary must contain the field
+ * "text", filled with the text, the player recieves. Also the fields mentioned in {@link DialogueScene}
+ * must be filled in.
+ * 
+ * @class WarningDialogue
+ * @extends InteractionScene
+ * @example
+ * // Starts a warningDialogue asking the player if he or she is sure to proceed.
+ * this.scene.launch('warningDialogue', {mainScene: this, title: "Warning", text: "Are you sure you want to proceed?"});
+ */
+
+class WarningDialogue extends InteractionScene
+{
+    constructor()
+    {
+        super("warningDialogue");
+    }
+
+    create()
+    {
+        /**
+         * The title of the dialogue
+         * @type {String}
+         */
+        this.title = this.data.title;
+
+        /**
+         * The text message that should be displayed to the player.
+         * It should be a question that can be answered with "yes" or "no",
+         * since the player gets two buttons to answer.
+         * @type {String}
+         */
+        this.text = this.data.text;
+
+        // adjusting the height of the dialogue
+        this.height =  0.7 *TEXTDIALOGUE_HEIGHT;
+        this.width = TEXTDIALOGUE_WIDTH
+        
+
+        // Add the panel to fill it with contents
+        this.createDialogue(this.title);
+
+        let textElement = new Phaser.GameObjects.Text(this, -200,-60, this.text, {color: "#000", wordWrap: {width: 420, useAdvancedWrap: true}});
+        let buttonNo = new Button(this, -100, 50, "button-long", "button-long-pressed", "Nein", this.handelResponse.bind(this,false),this);
+        let buttonYes = new Button(this, 100, buttonNo.y, "button-long", "button-long-pressed", "Ja", this.handelResponse.bind(this,true),this);
+        buttonYes.setButtonScale(0.8);
+        buttonNo.setButtonScale(0.8);
+        this.panel.add([textElement, buttonYes,buttonNo]);
+        this.panel.disableCloseButton();
+        this.fadeIn();
+
+    }
+
+    /**
+     * Act according to the decision of the player.
+     * Used as a callback function from the buttons.
+     * @param {boolean} response the response of the player, if set to false, the
+     *  dialoge closes without any further actions.
+     *  If set to true, the dialogue closes and emits a callback called "clickedYes".
+     */
+    handelResponse(response)
+    {
+        if (response)
+        {
+            this.emitter.emit("clickedYes");
+        }
+        else this.close();
+    }
+
+
+    
+}
+export default WarningDialogue;
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 11.08.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

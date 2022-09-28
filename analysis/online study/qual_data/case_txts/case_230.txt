@@ -1,0 +1,31 @@
+case 230:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Alle Ressourcen aufgebraucht und viele teure Sachen produziert 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Alle Ressourcen aufgebraucht, teure Sachen produziert aber leider auch teile übrig gehabt 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Schauen wieviele Rohstoffe es gibt und wovon es mehr gibt und mit welchen Möbeln wir auch mehr von dem Rohstoff verbrauchen von dem wir mehr haben. Dann gucken was viel Geld einbringt und davon auch was produzieren. Außerdem gucken dass man immer genau soviel teile produziert wie man für ein Möbelstück braucht um keine Ressourcen am Ende zu verschwenden.  
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Schaue wieviele Ressourcen du hast und wie sich diese am effektivsten im Verhältnis zum Gewinn auf die Möbel aufteilen lassen, z.b. viel Holz aber wenig Metall —> viele Stühle bauen  
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Gut dass viele Regale produziert werden sollen da sie am meisten einbringen und mehr Metall benötigt wird als Holz und es davon auch mehr gab. Es hätte aber ein Tisch und dafür weniger Stühle produziert werden können da dieser auch mehr Metall verbraucht (glaube ich?) und auch mehr Geld einbringt  
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Lieber noch einen Tisch und dafür einen Stuhl weniger, ich würde immer mindestens einen Tisch und ein Regal versuchen zu bauen da das mehr Geld bringt  

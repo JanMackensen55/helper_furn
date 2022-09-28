@@ -1,0 +1,40 @@
+case 167:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+rohstoffe nicht aufgebraucht
+relativ hohen gewinn erzielt
+ 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+guter profit, rohstoffe relativ gut verteilt
+jedoch mit produktionsstunden nicht ganz hingekommen 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+zunächst die items produzieren, die im verhältnis zu den rohstoffen den höchsten ertrag bringen
+wenn rohstoffe und arbeitszeit zuneige geht darauf achten, dass die balance zwischen den rohstoffen sich mit den zu produzierenden items deckt, zur not zu weniger ertragreichen items abweichen
+auch darauf achten, dass die balance der arbeitszeit zwischen den zwei produktionsstätten passt 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+zunächst das bauen was den höchsten ertrag zwischen rohstoff und verkaufspreis bringt
+wenn rohstoffe oder produktionszeit ausgeht, nächstes ertragreichens produzierbares item bauen 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+regale sind gut
+tische wären gut zu produzieren
+stühle sind nicth wirklich schlecht aber zu viele
+bett ist ok 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ sehr gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+ich glaube ich habe sie genau so gelöst 

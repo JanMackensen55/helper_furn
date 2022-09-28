@@ -1,0 +1,36 @@
+case 142:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher schlecht
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+eine falsche entscheidung mittendrin getroffen auf jeden fall
+ 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+ich habe viel produziert und hatte nicht so viel übrig
+ 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+schauen was viel gewinn bringt und die kosten vs gewinn abwägen und mit dem was am wenigsten gewinn bringt warten 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+wieder schauen was am meisten profit bringt
+immer darauf achten nichts zu bauen wenn es nicht fertig wird wegen der zeit oder den ressourcen  
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher schlecht
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+zu viele stühle gebaut
+tische geben am zweit meisten profit 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher schlecht
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+wieder zu viele stühle
+ich entscheide ehrlich gesagt ziemlich intuitiv 

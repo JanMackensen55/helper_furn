@@ -1,0 +1,32 @@
+case 170:
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+vergleiche die Rohstoffe und die Profite 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+achte auf die Rohstoffe und die profite 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+du musst mehr Profit schaffen
+ 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+du solltest mehr Profit generieren 
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ sehr gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+ich habe alle Rohstoffe aufgebraucht 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+nicht alle Arbeitszeiten und Rohstoffe aufgebraucht 

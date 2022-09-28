@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Class: Storage</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-Item.html">Item</a></li><li><a href="module-ItemPanel.html">ItemPanel</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li><li><a href="module-Storage.html">Storage</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="AiDialogue.html">AiDialogue</a></li><li><a href="AssesmentDialogue.html">AssesmentDialogue</a></li><li><a href="Building.html">Building</a></li><li><a href="Button.html">Button</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="DialogueScheduler.html">DialogueScheduler</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="FeedbackDialogue.html">FeedbackDialogue</a></li><li><a href="FeedbackSummary.html">FeedbackSummary</a></li><li><a href="FinalSummary.html">FinalSummary</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="InformerBanner.html">InformerBanner</a></li><li><a href="InteractionScene.html">InteractionScene</a></li><li><a href="LikertScale.html">LikertScale</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="Management.html">Management</a></li><li><a href="ManagementDialogue.html">ManagementDialogue</a></li><li><a href="Market.html">Market</a></li><li><a href="MarketDialogue.html">MarketDialogue</a></li><li><a href="MessageDialogue.html">MessageDialogue</a></li><li><a href="module-ItemPanel-ItemDisplay.html">ItemPanel~ItemDisplay</a></li><li><a href="module-ItemPanel-ItemPanel.html">ItemPanel~ItemPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Item-Item.html">Item~Item</a></li><li><a href="module-Storage-StorageEntry.html">Storage~StorageEntry</a></li><li><a href="module-Storage-StoragePanel.html">Storage~StoragePanel</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="PartDisplay.html">PartDisplay</a></li><li><a href="Player.html">Player</a></li><li><a href="Preloader.html">Preloader</a></li><li><a href="Process.html">Process</a></li><li><a href="ProfitSummary.html">ProfitSummary</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="ProgressBarVertical.html">ProgressBarVertical</a></li><li><a href="RadioButton.html">RadioButton</a></li><li><a href="Storage.html">Storage</a></li><li><a href="StorageDialogue.html">StorageDialogue</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Tutorial.html">Tutorial</a></li><li><a href="Ui.html">Ui</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="Workshop.html">Workshop</a></li><li><a href="WorkshopDialogue.html">WorkshopDialogue</a></li><li><a href="WorkshopQueue.html">WorkshopQueue</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#addBars">addBars</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#done">done</a></li><li><a href="global.html#getAllOptimalProfits">getAllOptimalProfits</a></li><li><a href="global.html#getMonthOptimalProfit">getMonthOptimalProfit</a></li><li><a href="global.html#interrupt">interrupt</a></li><li><a href="global.html#preload">preload</a></li><li><a href="global.html#resetHours">resetHours</a></li><li><a href="global.html#setMeterPercentage">setMeterPercentage</a></li><li><a href="global.html#setProduceAnimation">setProduceAnimation</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#work">work</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: Storage</h1>
+<section>
+
+<header>
+    
+        <h2>
+        Storage
+        </h2>
+        
+            <div class="class-description">This class implements a storage building, that can hold the parts of 
+the items.</div>
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="Storage"><span class="type-signature"></span>new Storage(data)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this object is needed to render the workshop building.
+   It contains the same parameters as the constructor of <a href="Building.html">Building</a>.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Storage.js.html">Storage.js</a>,
+				 <a href="Storage.js.html#sunlight-1-line-4">line 4</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Building.html">Building</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="buildingSprite">
+    <h4><span class="type-signature"></span>buildingSprite<span class="type-signature"> :Phaser.GameObjects.Sprite</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The sprite that renders the building. See <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html">Phaser.GameObjects.Sprite</a>.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Phaser.GameObjects.Sprite</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#buildingSprite">Building#buildingSprite</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-53">line 53</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="emitter">
+    <h4><span class="type-signature"></span>emitter<span class="type-signature"> :<a href="EventDispatcher.html">EventDispatcher</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The Emitter is an instance of the EventDispatcher and is used to record the actions
+performed by the user. In the case of buildings, we always want to record which building 
+has been opened by the player.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="EventDispatcher.html">EventDispatcher</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#emitter">Building#emitter</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-84">line 84</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="image">
+    <h4><span class="type-signature"></span>image<span class="type-signature"> :Phaser.GameObjects.Sprite</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The image <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html">sprite</a> of the building
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Phaser.GameObjects.Sprite</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#image">Building#image</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-92">line 92</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="name">
+    <h4><span class="type-signature"></span>name<span class="type-signature"> :String</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The name of the Building. This is also the name that is displayed in the <a href="Building.html#tooltip">tooltip</a>.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#name">Building#name</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-41">line 41</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="parts">
+    <h4><span class="type-signature"></span>parts<span class="type-signature"> :object</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        This object keeps track of the parts that have been produced to indicate
+how many parts are available to produce an item.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Storage.js.html">Storage.js</a>,
+				 <a href="Storage.js.html#sunlight-1-line-27">line 27</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="scene">
+    <h4><span class="type-signature"></span>scene<span class="type-signature"> :Phaser.Scene</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The Scene where the building should be rendered in.
+In this case this is usually the <a href="MainScene.html">MainScene</a>.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Phaser.Scene</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#scene">Building#scene</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-61">line 61</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html">Phaser.Scene</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="sign">
+    <h4><span class="type-signature"></span>sign<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        A sign that can be placed beneath a building
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#sign">Building#sign</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-46">line 46</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="tooltip">
+    <h4><span class="type-signature"></span>tooltip<span class="type-signature"> :Phaser.GameObjects.Sprite</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        This is the tooltip object that is triggered if the cursor is on the building.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Phaser.GameObjects.Sprite</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#tooltip">Building#tooltip</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-68">line 68</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="tooltipText">
+    <h4><span class="type-signature"></span>tooltipText<span class="type-signature"> :Phaser.GameObjects.BitmapText</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The text that should be inside the tooltip. 
+It contains the <a href="Building.html#name">name</a> of the building.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Phaser.GameObjects.BitmapText</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#tooltipText">Building#tooltipText</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-76">line 76</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="addClickListener"><span class="type-signature"></span>addClickListener(func)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Adds a listener that reacts on a click on the object.
+This is used for triggering a dialogue if a specific building is clicked.
+The function to initiate the individual dialogue must be passed by the instance.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>func</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the function that should be triggered, after the object as been clicked.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#addClickListener">Building#addClickListener</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-111">line 111</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addFlashEffect"><span class="type-signature"></span>addFlashEffect()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a flash effect to the building to highlight it for the tutorial.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#addFlashEffect">Building#addFlashEffect</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-157">line 157</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addPointerListeners"><span class="type-signature"></span>addPointerListeners()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Adds pointer events to toggle the display of the <a href="Building.html#tooltip">tooltip</a> 
+if the pointer is hovering over a building.
+It will fade in the tooltip if the cursor is above and fade it out if the cursor leaves the 
+building.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#addPointerListeners">Building#addPointerListeners</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-129">line 129</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="combineAvailable"><span class="type-signature"></span>combineAvailable()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        This function checks if the available amount of parts inside the storage
+is sufficient to build an item and builds it.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Storage.js.html">Storage.js</a>,
+				 <a href="Storage.js.html#sunlight-1-line-54">line 54</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="stopFlashEffect"><span class="type-signature"></span>stopFlashEffect()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Stop the flash effect.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Building.html#stopFlashEffect">Building#stopFlashEffect</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Building.js.html">Building.js</a>,
+				 <a href="Building.js.html#sunlight-1-line-174">line 174</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 11.08.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

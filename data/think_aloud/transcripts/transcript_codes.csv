@@ -1,0 +1,40 @@
+Codes:
+
+!! # Hier passiert irgendetwas Interessantes/Neues
+
+H # - Maus hovert über ein bestimmtes Feld
+
+MaxOut # Jedes Möbelstück wird auf Max und dann auf 0 gezogen, um maximal erreichbaren Profit zu vergleichen
+
++B # Plus ein Bett
++R #
++T #
++S #
+
+++B # Plus mehrere Betten
+++R 
+++T 
+++S
+
+
+-B # Minus ein Bett
+-R 
+-T 
+-S 
+
+--B # Minus mehrere Betten
+--R 
+--T 
+--S
+
+E(B,R) # Explorativ Bett & Regal
+
+
+MB # Bett auf Maximum
+MR
+MT
+MS
+
+RR # Rest Ressourcen [Holz, Metall, WSA, WSB, WSC, WSD]
+RW # Rest Werkstätten [WSA, WSB, WSC, WSD]
+RM # Rest Material [Holz, Metall] 

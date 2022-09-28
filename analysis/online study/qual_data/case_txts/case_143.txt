@@ -1,0 +1,31 @@
+case 143:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher schlecht
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Weil ich die Gewinnmaximierung gerne länger und genauer berechnet hätte anstelle "auf gut Glück" zu raten 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Weil das vorherige Feedback besser ausfiel als in den ersten Runden und ich das Spiel langsam verstehe 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Am Profit orientieren. Überlegen, wie viele Stunden der Artikel mit dem größtmöglichen Profit in beiden Werkstätten benötigt. Überlegen, ob ausreichend Material vorhanden ist und ob "Reststunden" einer Farbik durch einen anderen Artikel aufgefüllt werden können 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Du schaust dir an, welche Artikel am meisten Profit im Verhältnis zur Produktionskapazität und Wareneinsatz bringen. 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ sehr gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Ich hätte mehr Tische hergestellt 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Die Stühle und Tische hatten fast keinen Gewinnunterschied, die Tische haben jedoch viel Produktionszeitraum geblockt, daher hätte ich auch sehr wenig Tische und mehr Stühle produziert 

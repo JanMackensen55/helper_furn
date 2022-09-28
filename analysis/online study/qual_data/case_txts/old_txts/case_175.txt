@@ -1,0 +1,31 @@
+case 175:
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Es ist wichtig die Möbel herzustellen, die möglichst ressourceneffizient sind. Das heißt, das Verhältnis von Anzahl verbrauchter Ressourcen zu Verkaufspreis sollte möglichst gut sein. Je ressourceneffizienter ein Möbelstück, desto mehr sollte man davon herstellen. Dabei sollte man aber darauf achten, welche Ressourcen zur Verfügung stehen, um insgesamt möglichst viele Möbel herzustellen und am besten die meisten Ressourcen zu verbrauchen. Wenn also deutlich mehr Metall zur Verfügung steht, eher mehr metallintensive Möbel bauen (aber das gegenüber der resssourceneffizienz abwägen). Auf die Bauzeiten achte ich gerade etwas wenig, eigentlich sollte man da auch schauen, dass die möglichst verbraucht werden. 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Die Verkaufspreise der Möbel verändern sich, nicht aber die benötigten Ressourcen. Deshalb muss man sich die Preise der Möbel in den Management Gebäuden ansehen, die benötigten Materialien zusammenzählen und das Gold was sie geben. Danach kann man dann abwägen und eine Art Rangliste erstellen, welches die effizientesten Möbel sind. Dann schaut man sich die Ressourcen an und wägt ab, wie effizient ein Möbel vom Verkaufspreis und wie effizient zum passenden Ressourcenverbrauch ist. Z.b. zwei Möbel sind gleich ressourceneffizient, das eine davon verbraucht eher mehr Metall und man hat diesen Monat viel Metall baut man natürlich davon am meisten. Diese abgewägte "Rangliste" wird dann so abgearbeitet. Gegen Ende, wenn nicht mehr so viele Ressourcen da sind und man noch Zeit hat, kann man auch genau ausrechnen, welche Möbel jetzt noch am meisten Geld bringen. 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Ich bin mir nicht ganz sicher, aber mir kommt es so vor, als wären es zu wenig Tische. Es steht nicht wenig Metall zur Verfügung und diesen Monat waren Tische relativ effizient was die Ressourcen angeht. Es kann aber sein, dass die Lösung trotzdem besser ist, da die Werkstattzeit ein Problem war und Tische sehr viel Zeit kosten. Stühle waren auch relativ effizient und haben eher weniger Zeit in der Werkstatt verbraucht. Mir gefällt auch auf jeden Fall, dass eher Regale als Betten hergestellt wurden, da sie mehr Metall verbrauchen (was man sonst über hat, da ja viele holzintensive Stühle hergestellt wurden) + Regale diesen Monat effizienter als Betten waren 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher schlecht
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Mir scheinen es wieder etwas wenig Tische zu sein, da diese ressourceneffizient waren und es keine Zeitprobleme in der Werkstatt gab. Ansonsten waren eigentlich alle Möbel ähnlich effizient, aber es hätten vielleicht auch mehr Betten statt Regalen hergestellt werden können, da mehr Holz als Metall zur Verfügung stand.  
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Ich vermute, eher die kosteneffizientesten Möbel gebaut zu habe und die Rohstoffe größtenteils aufgebraucht zu haben, wenn auch nicht ganz perfekt. 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher schlecht
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Keine so gute Zeitverwaltung; in einigen Werkstätten noch so wenig Zeit übrig, dass nichts mehr gebaut werden kann; außerdem noch einige Ressourcen übrig 

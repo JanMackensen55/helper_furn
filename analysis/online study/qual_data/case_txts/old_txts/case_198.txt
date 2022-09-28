@@ -1,0 +1,31 @@
+case 198:
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Bevor es losgeht solltest du schauen wie viel Holz und Metall dir zu verfügung steht. Wenn es mehr Metall als Holz gibt, dann möglichst viele Regale und Tische bauen, denn diese benötigen viel Metall und insbesondere die Regale bringen auch viel Geld rein. Wenn mehr Holz da ist, dann mehr Betten und Stühle bauen. Während der Produktion immer ein Auge auf die Balance zwischen Holz und Metall achten, nicht, dass du am Ende mit ganz viel Holz aber keinem Metall dastehst und nichts mehr bauen kannst. Außerdem auf die Zeit in den Fabriken achten. Manche Dinge (z.B. Regalgestelle und Tischplatten) benötigen teilweise sehr viel Zeit. Also wenn du in einer Fabrik nicht mehr allzu viel Zeit übrig hast, solltest du genauer planen und schauen wie du die Zeit am besten nutzt. Aber mach dir zu Beginn des Monats nicht zu viele Gedanken über die Zeit, sondern produziere einfach erstmal los, damit nicht der Monat zu schnell rumgeht. Wenn ich nicht gerade mit sehr wenig Metall beginne, dann mache ich gerne am Anfang erst einfach mal einige Regale und Tische, weil diese relativ gutes Geld bringen.  
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Wie ich eigentlich gerade eben schon sagte, achte auf die Rohstoffe die dir zur Verfügung stehen. Wenn du mehr Holz hast, dann baue mehr Betten und Stühle, wenn du mehr Metall hast, dann mehr Regale und Tische. Allerdings wenn du von beidem relativ viel hast (so schätzungsweise mehr als 50), dann sind die Rohstoffe eher weniger der limitierende Faktor, sondern die Zeit in den Fabriken. In dem Fall baue viele Regale und Betten, weil sie viel Geld bringen. Hier musst du genau auf die Zeit in der Regalgestell- und Matratzen-Fabrik (ich meine die eine ganz auf recht Seite) achten. Auch Tische sind generell vor den Stühlen zu bevorzugen weil sie mehr Geld bringen, allerdings kosten Tischplaten viel mehr Zeit, deswegen evtl. einen Tisch weniger machen und dafür noch viele Stühle. 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Ich kann es nicht genau beurteilen, weil ich bei deiner Lösung nicht genau weiß wie viel Holz, Metall und Zeit in den einzelnen Fabriken am Ende übrig bleibt. Aber du hättest auf jeden Fall mehr Tische machen sollen, weil diese mehr Geld bringen und du sowieso ziemlich viel Metall hast. Positiv zu erwähnen ist aber, dass du viele Regale und ein Bett gemacht hast. Ich glaube damit hast du die verfügbare Zeit von dieser Regalgestell- und Matratzen-Fabrik sehr gut ausgenutzt. 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher schlecht
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Du hast viel zu viele Regale gemacht. Die Regale brauch viel Metall und so Metall hatten wir letzten Monat nicht. Stattdessen wäre es besser gewesen mehr Betten und ein paar Tische zu machen. 
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ sehr gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Ich habe alle Rohstoffe verbrauchen können. Außerdem habe ich versucht (und ich glaube das hat auch ganz gut geklappt) möglichst viele Regale herzustellen, weil sie viel Geld bringen. 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ sehr gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Ich habe zwar nicht alle Rohstoffe ganz aufbrauchen können, weil die Zeit in den Fabriken der limitierende Faktor war. Wahrscheinlich habe ich die Zeit nicht optimal genutzt, aber ich denke dennoch, dass sie relativ gut genutzt habe 

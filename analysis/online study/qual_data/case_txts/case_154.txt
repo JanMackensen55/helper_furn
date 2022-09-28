@@ -1,0 +1,32 @@
+case 154:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ sehr gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Weil alle Ressourcen aufgebraucht wurden. 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Die Zeiten die eine Werkstatt zu bieten hatte, wurden von mir nicht optimal ausgenutzt. aber es war trotzdem gut. 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Dein Ziel ist es mit denen dir pro Monat zur Verfügung stehenden Ressourcen in den Werkstätten Sachen bauen, die den größten Gewinn  bringen.
+Du solltest darauf achten wieviel von welchen Ressourcen dir für diesen Monat zur Verfügung stehen. Beachte auch die von jeder Werkstatt benötigte Zeit, die du zur Herstellung von teilen brauchst sowie die restliche Zeit die eine Werkstatt dir zu bieten hat. 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Das hängt davon ab wie viele Ressource dir in diesem Monat gegeben wurde. Aber zuerst produzierst du die Sachen, welche dir den größten Gewinn bringen. Das musst du die Zeit, die die Werkstatt pro Monat frei hat mit beziehen. 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Ich würde mehr mehr Tische anstatt Stühle produzieren. Da die Anzahl von Metall (oder Silber, oder was auch immer das für ein Rohstoff ist) größer als die von Holz ist. 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ sehr gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Sehr schön. Da die Anzahl von Holz größer als die von Metall ist, kann man mehr Stühle produzieren. Tische verbrauchen viel zu viel Metall.  Regale bringen den meisten Gewinn, also war das ziemlich gut viele davon zu machen. Da wurde ja auch die Zeit in der Werkstatt sehr gut ausgenutzt. 

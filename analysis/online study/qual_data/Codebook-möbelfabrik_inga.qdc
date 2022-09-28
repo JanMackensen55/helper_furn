@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeBook xmlns="urn:QDA-XML:codebook:1:0" xsi:schemaLocation="urn:QDA-XML:codebook:1:0 Codebook.xsd" origin="QualCoder" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Codes>
+<Code guid="2c062e98-6c6d-4343-b1d9-5dc85728749c" name="Strategy" isCodable="false">
+<Code guid="cdbd1aec-0d82-4748-82d5-088129c44982" name="Cost-Profit-Tradeoff" isCodable="true" color="#58FAF4" />
+<Code guid="7ef25d81-dc66-4df3-9a45-8e4db98afbcb" name="General Ranking" isCodable="true" color="#5882FA">
+<Description>Probably have to define relations here
+Ranking with regard to what? Profit, cost, use?</Description>
+</Code>
+<Code guid="591bd033-3e73-4698-bfec-664922e027ed" name="Decision order" isCodable="true" color="#00F0F0" />
+<Code guid="744d8862-980a-46cb-97a5-36f6d4936c32" name="if then" isCodable="true" color="#81BEF7" />
+</Code>
+<Code guid="466a71a2-49d2-475a-b642-a564b3aeb00d" name="General Gameplay" isCodable="false">
+<Code guid="7ddb660a-dc87-4572-ba0c-55b3c1412950" name="Time constraints" isCodable="true" color="#FAAC58" />
+<Code guid="977ca400-4a23-4d8c-ac7f-c270211ceccb" name="Understand Game" isCodable="true" color="#F3E2A9" />
+<Code guid="f1e68674-3ee2-427a-a93a-f22130199e41" name="Wrong decision" isCodable="true" color="#FA8258" />
+<Code guid="516d752d-672b-4c92-8f28-8830ade9e7bf" name="General statements" isCodable="true" color="#F7D358" />
+<Code guid="69681a8c-aef3-4cc7-9c7d-86610b2e7e70" name="Intuitive Decision" isCodable="true" color="#F5DA81" />
+<Code guid="600470e9-b939-4a8a-bdf0-02bd1d461452" name="No notes" isCodable="true" color="#F7BE81" />
+<Code guid="09c4fdf2-afb0-462b-8719-ec9abca68dc0" name="Forgot Startegy" isCodable="true" color="#FACC2E" />
+</Code>
+<Code guid="ed5c49f6-6b76-475a-8876-5729947c6b3a" name="Gameplay Strategy" isCodable="false">
+<Code guid="5a7117b6-9e51-4751-a8f9-9c1abf6895db" name="No Surplus of parts" isCodable="true" color="#D37676" />
+<Code guid="994c85a9-af0e-44af-853d-15074eb89057" name="Assess Material" isCodable="true" color="#BE81F7" />
+<Code guid="893897d0-ca63-4de1-bfea-c6b1d47e6315" name="Assess Times" isCodable="true" color="#F5A9F2" />
+<Code guid="9aae284a-5a21-420f-99ae-b463e0c5f8d7" name="Assess profit" isCodable="true" color="#769E78" />
+<Code guid="9a3a9189-35bf-40e6-b884-7a048386b22c" name="Assess costs" isCodable="true" color="#F7819F" />
+</Code>
+<Code guid="4b421e58-ffbf-4554-8062-79ffc0c59bde" name="Atom" isCodable="false">
+<Code guid="e026cce3-4900-4f2f-9b98-60b86f26ba6e" name="Wood" isCodable="true" color="#B07CE1" />
+<Code guid="9b81c76f-bc0c-48c1-b29f-bcaa192d1f4a" name="Metal" isCodable="true" color="#CAA8EB" />
+<Code guid="99bbfff7-5fa9-4cf9-a09e-10c6e179177c" name="WsA" isCodable="true" color="#F4FA58" />
+<Code guid="b9b53900-462f-44f2-90ef-bb21cb607b6c" name="WsB" isCodable="true" color="#F2F5A9" />
+<Code guid="a3f3bec3-b08d-4a88-a638-17936ae47226" name="WsD" isCodable="true" color="#F5ECCE" />
+<Code guid="2ab0533c-81f3-4520-93ed-8a83734b751c" name="WsC" isCodable="true" color="#F5F6CE" />
+<Code guid="28204ce6-fa06-4bcd-84e4-760476b65755" name="Costs" isCodable="true" color="#FA5882" />
+<Code guid="a4aa9528-a5ef-4e50-be25-128c6eb6ecc5" name="Profit" isCodable="true" color="#487E4B" />
+<Code guid="01321535-d269-45ae-a2eb-7b960cfd4fc7" name="Workshop" isCodable="true" color="#F7FE2E" />
+<Code guid="401bb1db-cceb-4a5e-8896-63a3e6383873" name="Material" isCodable="true" color="#9651D7">
+<Description>Wood &#038; Meta
+
+Synonyms:
+Ressources?</Description>
+</Code>
+<Code guid="2537c03e-4391-4d71-8e83-f8ae33bf7dd1" name="Time" isCodable="true" color="#F781F3" />
+<Code guid="880f9c79-253f-403f-8b08-e1d7235d291e" name="Ressource" isCodable="true" color="#F5A9A9" />
+</Code>
+<Code guid="d0571be0-23ec-4085-9011-0b1fa42f8fef" name="Evaluation" isCodable="false">
+<Code guid="a1713408-6279-42af-99fc-2eca5b267f74" name="sehr schlecht (Likert)" isCodable="true" color="#F78181" />
+<Code guid="dc6cb865-7211-40b1-9398-c27cba9c8eb4" name="eher schlecht (Likert)" isCodable="true" color="#F5A9A9" />
+<Code guid="543c2377-bc4f-4e51-837a-16d77d770b22" name="eher gut (Likert)" isCodable="true" color="#D0F5A9" />
+<Code guid="ed25bfca-9525-45ef-ab29-fd3d6f0b8320" name="Sehr gut (Likert)" isCodable="true" color="#BEF781" />
+<Code guid="68a50092-9892-4d89-82f8-652ecb4baaa2" name="keine Ahnung (Likert)" isCodable="true" color="#C8C8C8" />
+</Code>
+<Code guid="9dd8e2d3-d0a3-4cb5-8180-f4ae906f7b46" name="Furniture" isCodable="false">
+<Code guid="6fb2579c-3b24-45db-a41a-59170d2e0d44" name="Bookcase" isCodable="true" color="#CB5E3C" />
+<Code guid="1ef81dc1-a310-4bec-9d11-30a2332afa59" name="Table" isCodable="true" color="#E5AE9D" />
+<Code guid="dccfff03-1cff-4441-8c70-ddb4bdb35717" name="Chair" isCodable="true" color="#D8866D" />
+<Code guid="9ca807c3-9cab-4a66-b8a4-cdbae0170301" name="Bed" isCodable="true" color="#F2D6CE" />
+</Code>
+</Codes>
+</CodeBook>

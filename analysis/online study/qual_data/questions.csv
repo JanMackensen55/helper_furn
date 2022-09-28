@@ -1,0 +1,20 @@
+Code;Frage;Antwortart;Zeitpunkt
+GE01;Wie alt sind Sie (in Jahren):;Unter 18,18-24, 25-29, 30-39, 40-49, 55-59, über 60;Pre-game
+GE03;Welches Geschlecht haben Sie:;Weiblich, männlich, divers m möchte ich nicht mitteilen;Pre-game
+GE04;Welche der folgenden Aussagen trifft am besten auf Sie zu? Wählen Sie eine Option aus:;"Ich spiele keine Computer- oder Konsolenspiele in meiner Freizeit
+Ich spiele in unregelmäßigen Abständen Computer- oder Konsolenspiele (maximal 1x im Monat).
+Ich spiele ab und zu Computer- oder Konsolenspiele (2-3x im Monat).
+Ich spiele regelmäßig Computer- oder Konsolenspiele (mindestens 1x in der Woche).";Pre-game
+GE05;Haben Sie dieses oder ein ähnliches Experiment zuvor schon mal gespielt?;Nein, Ja, ich habe es schon n mal gespielt.;
+AS01_01;Wie gut schätzt du deine Lösung ein?;Sehr schlecht, eher schlecht, eher gut, sehr gut, keine Ahnung (Likert Scale);Ende Monat 3 
+AS01_02;Warum schätzt du deine Leistung so ein?;Freitext;Ende Monat 3 
+AS02_01;Wie gut schätzt du deine Lösung ein?;Sehr schlecht, eher schlecht, eher gut, sehr gut, keine Ahnung (Likert Scale);Ende Monat 6 
+AS02_02;Warum schätzt du deine Leistung so ein?;Freitext;Ende Monat 6 
+AN01_01;Was sollte ich tun um eine möglichst gute Lösung zu finden?;Freitext;Ende Monat 8 
+AN01_02;Wie finde ich jeden Monat heraus, was ich bauen soll?;Freitext;Ende Monat 10 
+FB01_01;Wie gut ist meine Lösung? (Mike, suboptimal);Sehr schlecht, eher schlecht, eher gut, sehr gut, keine Ahnung (Likert Scale);Ende Monat 11
+FB01_02;Was habe ich richtig/falsch gemacht? (Mike, suboptimal);Freitext;Ende Monat 11
+FB02_01;Wie gut ist meine Lösung? (Mike, optimal);Sehr schlecht, eher schlecht, eher gut, sehr gut, keine Ahnung (Likert Scale);Ende Monat 12
+FB02_02;Was habe ich richtig/falsch gemacht? (Mike, optimal);Freitext;Ende Monat 12
+GE05;Haben Sie dieses oder ein ähnliches Experiment zuvor schon mal gespielt?;Nein, Ja, ich habe es schon n mal gespielt.;Post-Game
+GE06_01;Haben Sie noch weitere Anmerkungen zum Spiel oder Experiment?;Freitext;Post-Game

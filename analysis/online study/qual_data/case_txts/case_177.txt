@@ -1,0 +1,31 @@
+case 177:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Wenn ich gerechnet hätte, wäre es wohl optimaler geworden, aber ich bin mein Material gut losgeworden. Allerdings habe ich nicht so sehr auf den Profit dabei geschaut. 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Jetzt schaue ich auch auf den Zeitstrahl der Fabriken und habe im Blick, wie viel ich wirklich produzieren kann. Auf den Profit schaue ich aber dennoch eher nur zweitrangig. Ich achte eher darauf, dass alles immer gut in Betrieb ist. 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Schau dir zuerst alle Produkte an und wie viele Ressourcen und Zeit sie benötigen. Dann achte darauf, wie viele Ressourcen uns im Monat zur Verfügung stehen. Im besten Fall kannst du nicht nur ausrechnen, wie sich die Ressourcen am effezientesten einsetzen lassen, sondern hast auch im Blick wie viel Profit wir für die Produkte bekommen. Manchmal ist es besser, weniger zu produzieren, wenn wir für die wenigen Produkte aber mehr Geld bekommen. 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Manche Produkte brauchen mehr Metall als Holz, bei anderen ist es umgekehrt. Je nachdem ob wir im Monat mehr Hollz oder Metall ist, kannst du schon sehen, worauf wir am besten unseren Schwerpunkt legen sollten. 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Weil wir mehr Metall haben, macht es Sinn besonders viele Regale zu bauen, aber vielleicht hättest du mehr Tische bauen können, da die auch mehr Metall als Holz brauchen und ja auch mehr einbringen als Stühle. 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Wir hatten mehr Holz als Metall also hat es Sinn gemacht, mehr Stühle zu produzieren. Eventuell hätten es mehr Betten sein können weil die auch mehr Holz als Metall brauchen. Aber ein paar Regale sind auch nicht schlecht, weil die viel einbringen. 

@@ -1,0 +1,32 @@
+case 202:
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+alle parameter betrachten, um guten Mittelweg aus "einfachen" und "komplexen" Produkten zu finden. 
+Nicht zu viele Rohstoffe/ Zeiteinheiten verbrauchen 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Abschätzen der Rohstoffe, erstmal mit komplexen Bauteilen anfangen und dann mit Tischen, Stühlen auffüllen 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+gut, viele Regale hergestellt zu haben. Aber besser wäre es mehr Tische als Stühle herzustellen, da diese mehr Profit geben 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+gut, viele Regale hergestellt zu haben. Allerdings zu viele Stühle, lieber mehr Betten und Tische das nächste Mal 
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ sehr gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+fast alle rohstoffe verbraucht kein überschuss 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+ein paar sachen übrig aber viel produziert 

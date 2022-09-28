@@ -1,0 +1,23 @@
+task,category,process,complexity,clarity,evaluation
+BST,Simple,1,1,1,1
+Tower,Simple,1,1,1,1
+River,Simple,1,1,1,1
+Water Jug,Simple,1.2,1.11,1,1
+Katona Card,Simple,1,1,1,1
+Ricochet Robots,Simple,1.2,1.11,1,1
+Transportation,Dynamic Exploration,1.2,1.11,1.5,1
+Sugar Production,Dynamic Exploration,1.2,1.22,2,2
+Biology Lab,Dynamic Exploration,1.4,1.33,2,2
+Economic,Dynamic Exploration,1.8,1.44,1.5,2
+Sudoku,Other, 1.4 , 1.44 ,1,1
+Triangle,Other, 1.4 , 1.44 , 1.5 ,1
+WPP,Other, 1.6 , 1.67 , 1.5 ,2
+Knapsack,MIP-based, 1.4 , 1.44 ,1,1
+CVRP,MIP-based, 1.6 , 1.67 ,1, 1.5 
+Traveling Salesman,MIP-based, 1.6 , 1.67 ,1,1
+Furniture,Furniture,2, 1.89 ,1,1
+Travelplan,MIP-based,2, 1.89 ,1, 1.5 
+Taylorshop,CPS, 2.8 , 2.44 , 1.5 ,3
+Firefighter,CPS, 2.2 , 2.33 , 1.5 ,2
+Moro,CPS, 2.8 , 2.89 , 2.5 ,3
+Lohhausen,CPS,3,3,3,3

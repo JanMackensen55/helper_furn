@@ -1,0 +1,31 @@
+case 203:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Ich hatte meiner Meinung nach kein perfektes Ressourcen Management. Da die Tische im Ressourcen-Profit-Verhältnis am besten abgeschnitten haben, wollte ich diese so oft es geht bauen. Dabei habe ich aber die Produktionsdauer und Ressourcen unterschätzt 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ sehr gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Ich wüsste nicht, was ich hätte besser machen sollen. 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Du solltest zuerst schauen, welches Möbelstück sich diesen Monat vom Kosten-Profit-Verhältnis am meisten lohnt. Dann schaust du auf deine verfügbaren Ressourcen. Hast du nur wenige zur Verfügung, spielt das Verhältnis von Holz und Metall eine große Rolle. Hast du mehr Metall als Holz, eignet sich der Bau von Tischen und Regalen mehr. Hast du mehr Holz als Metall, eignet sich der Bau von Stühlen und Betten mehr. Ist die Anzahl an Ressourcen jedoch groß genug (um die 50 rum), kannst du die Ressourcen weitestgehend ignorieren, weil du sie wahrscheinlich nicht aufbrauchen können wirst. Dann spielt die Zeit eine viel größere Rolle und du musst darauf achten, dass du die Zeiten der Fabriken bestmöglich ausnutzt, wobei du gleichzeitig auch immer abwägen musst, ob das auch das meiste Geld einbringt. 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Also eigentlich habe ich alles schon in der ersten Frage beantwortet haha. Upsi 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher schlecht
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Es ist gut, dass du Regale gebaut hast, weil das Kosten-Profit Verhältnis davon am besten war. Du hättest aber lieber 3 Tische und 2 Stühle bauen sollen anstelle von 6 Stühlen, da das deinen Profit noch einmal gesteigert hätte 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+Sehr schlecht
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Du hättest viel mehr Betten bauen sollen, da diese preislich mit Abstand am profitabelsten waren. Desweiteren hättest du in der anderen Fabrik nicht nur Stühle bauen sollen, sondern hättest lieber noch einen Tisch gebaut. 

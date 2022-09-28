@@ -1,0 +1,33 @@
+case 235:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Ich gewöhne mich langsam an die Arbeit und habe Profit gemacht. 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Ich glaube, ich habe im Vergleich zu den vorherigen Monaten genauso viel Profit gemacht, d.h. zumindest nicht weniger.
+ 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Auf die verbleibende Zeit in jedem Management achten, auf die verbleibenden Ressourcen achten 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+In den Managements sind die verschiedenen Möbel aufgelistet, genauso wie die Ressourcen und die Zeit, die dafür benötigt werden.  
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Vier Regale bringen viel Profit ein, aber die Ressourcen für 6 Stühle á 2 Münzen hätte man auch für mehr Tische oder Betten nutzen können.
+ 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Bei den Ressourcen hätte man mehr Betten erstellen sollen, die vielen Stühlen ergeben aber Sinn, da mehr Holz zur Verfügung stand. 

@@ -1,0 +1,31 @@
+case 163:
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Die bereitgestellten Rohstoffe möglichst alle aufbrauchen, auf die verfügbare Arbeitszeit in den Werkstätten achten und diese klug einteilen. Und eher Betten und Regale bauen, wenn es möglich ist, weil diese mehr Geld einbringen 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Indem man auf die verfügbaren Rohstoffe achtet. Wenn mehr Holz zur Verfügung steht, dann sollte man eher Stühle als Tische bauen 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher schlecht
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Es wurden viele Regale gebaut, was gut ist, weil diese viel Profit einbringen. Allerdings wurden auch sehr viele Stühle gebaut, die am wenigsten Profit einbringen. Außerdem benötigen Stühle viel Holz, was nicht in Übermaßen zur Verfügung steht. Es wäre besser gewesen, etwas weniger Stühle aber dafür mehr Tische und Betten zu bauen. 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Es wurden viele Regale hergestellt, was viel Profit einbringt. Es wurden auch viele Stühle hergestellt, die zwar am wenigsten Profit bringen, aber dafür am meisten Holz verbrauchen, von dem mehr vorhanden ist als Metall, was einen ganz guten Ausgleich bietet. Vielleicht hätte man versuchen können einen Tisch oder noch ein Bett mehr herzustellen, weil der Rohstoffverbrauch und Arbeitsaufwand in der Werkstatt für ein Bett sehr gut ist, dafür dass damit gut Profit eingeholt werden kann. 
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Weil am Ende fast alle Baustoffe aufgebraucht wurden und kaum Reste übrig blieben 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Es wurden zwar nicht alle Rohstoffe aufgebraucht, aber dafür die Arbeitszeit in fast allen Fabriken. Allerdings ist mir ein Fehler unterlaufen, wodurch ein Bett nicht fertiggestellt werden konnte 

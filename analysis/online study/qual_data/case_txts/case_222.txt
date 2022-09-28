@@ -1,0 +1,32 @@
+case 222:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher schlecht
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Am Anfang habe ich zeitliche Faktoren weniger berücksichtigt und hatte keine Taktik, die Intuition, wie das Spiel funktioniert, kam erst mit der Zeit. 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Man braucht Zeit, um reinzukommen, wird dann aber besser 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Achte darauf, die Rohstoffe im Gleichgewicht zu halten. Schau wovon du mehr zur Verfügung hast und richte die Produktherstellung danach aus. Halte die Zeit immer im Hinterkopf 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Orientiere dich am Verhältnis der Rohstoffe
+ 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher schlecht
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Keine Tische, obwohl die mehr Metall brauchen 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ sehr gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+sieht besser aus von der Relation der Rohstoffe 

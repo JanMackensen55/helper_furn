@@ -1,0 +1,16 @@
+{
+"templates": {
+	"systemName"            : "FurnitureCompany - Strategy Game",
+	"includeDate"           : false,
+	"navType"               : "vertical",
+	"theme"                 : "cerulean",
+	"linenums"              : true,
+	"collapseSymbols"       : false,
+	"inverseNav"            : false,
+	"outputSourceFiles"     : true ,
+	"dateFormat"            : "DD.MM.YYYY",
+	"syntaxTheme"           : "default",
+	"sort"					: true,
+	"search"                : true 
+	}
+}

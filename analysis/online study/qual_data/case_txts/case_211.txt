@@ -1,0 +1,31 @@
+case 211:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Resourcen so gut wie es ging ausgenutzt 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Zeit nicht gut ausgenutzt, am Ende blieben Materialien übrig, aber keine Zeit 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Reize alle deine Resourcen aus. Pass auf, dass du nicht unnötige Teile produzierst, die du nicht verwerten kannst. 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Materialien anschauen und nach Bauchgefühl entscheiden, was priorisiert werden kann 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher schlecht
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Ich denke am Ende ist viel Metall bei dir übrig geblieben. Dementsprechend hättest du bestimmt mehr Tische bauen können, statt anderes 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Irgendwie nicht ausgeglichene Produktion, aber alle Materialen wurden eigentlich so gut wie es ging ausgenutzt.  

@@ -1,0 +1,31 @@
+case 146:
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+einfach deinem Bauchgefühl folgen 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+du musst dir angucken welche Ressourcen du zur Verfügung hast und dann entscheiden, wie sinnvoll es ist welche Möbel in welcher Anzahl zu bauen 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher schlecht
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+ich hätte eher mehr Regale und Tische hergestellt, weil die mehr Profit bringen.  
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+ich finde gut, dass so viele Regale hergestellt wurden. aber ich hätte eher Tische statt Stühle gemacht und auch eher Betten statt Tische und Stühle. 
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher schlecht
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Ich hätte von Anfang an eher darauf gucken sollen, wie viel Geld die einzelnen Möbel einbringen. Dementsprechend hätte ich planen sollen, welche Möbel hergestellt werden und nicht einfach willkürlich. 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+ich mache ja eigentlich schon viel Umsatz, aber ich könnte besser planen. Am liebsten würde ich mir Sachen notieren, um einen besseren Überblick zu bekommen.  

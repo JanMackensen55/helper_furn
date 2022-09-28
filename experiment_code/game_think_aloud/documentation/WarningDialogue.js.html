@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: WarningDialogue.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-Slider.html">Slider</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Button.html">Button</a></li><li><a href="Card.html">Card</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="Dialogue.html">Dialogue</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExplainScene.html">ExplainScene</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="MissingPanel.html">MissingPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Slider-Slider.html">Slider~Slider</a></li><li><a href="module-Slider-SliderComponent.html">Slider~SliderComponent</a></li><li><a href="NewsDialogue.html">NewsDialogue</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="OkayScene.html">OkayScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="Player.html">Player</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="SummaryScene.html">SummaryScene</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Timer.html">Timer</a></li><li><a href="UI.html">UI</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="WarningScene.html">WarningScene</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: WarningDialogue.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import * as Constants from './Constants.js';
+import ExpainScene from './ExplainScene.js';
+
+/**
+ * @class WarningDialogue
+ * @classdesc
+ * This class implements a dialogue, that is shown if the player finishes a month without bulding something.
+ * It lets the player decide if he really wants to finish the month or if he wants to build something
+ * 
+ * @extends Phaser.GameObjects.Container
+ * @constructor
+ * 
+ * @param {object} data the data object, used to create the dialogue.
+ * @param {Phaser.Scene} data.scene the scene where the dialogue is placed.
+ * @param {Phaser.Scene} data.parentScene The Scene in which the Scene in which the Dialogue is placed is placed (MainScene)
+ * @param {number} data.x the x coordinate of the dialogue.
+ * @param {number} data.y the y coordinate of the dialogue.
+ * @param {number} data.scalingX factor with which the scene is scaled on the x axis
+ * @param {number} data.scalingY factor with which the scene is scaled on the y axis
+ * 
+ */
+class WarningDialogue extends Phaser.GameObjects.Container{
+    constructor(data){
+        let { scene, parentScene, x, y, scalingX, scalingY, header, text} = data;
+        let panel = new Phaser.GameObjects.Sprite(scene, 0,0, 'panel').setScale(scalingX, scalingY);
+        let contents = new Phaser.GameObjects.Sprite(scene, -1,-5, 'panel-contents').setScale(scalingX, scalingY);
+        panel.displayHeight = 0.7 * Constants.TEXTDIALOGUE_HEIGHT*scalingY; 
+        panel.displayWidth = Constants.TEXTDIALOGUE_WIDTH*scalingX; 
+        contents.displayHeight = panel.displayHeight - 50*scalingY;
+        contents.displayWidth = panel.displayWidth - 70*scalingX;
+        let headerText = new Phaser.GameObjects.Text(scene, panel.x, contents.y-contents.displayHeight/2, header, {fontSize:24*Constants.SCALING,color: '#000'}).setOrigin(0.5, -0.8);
+        let textElement = new Phaser.GameObjects.Text(scene, -200*scalingX,-60*scalingY, text, {fontSize:16*Constants.SCALING, color: "#000", wordWrap: {width: 420*scalingY, useAdvancedWrap: true}});
+        let buttonNo = new Phaser.GameObjects.Sprite(scene, -100*scalingX,80*scalingY,'month_done').setScale(0.75*scalingX, 0.75*scalingY);
+        let buttonNoText = new Phaser.GameObjects.Text(scene, buttonNo.x, buttonNo.y, 'Nein', {fontSize: 16*Constants.SCALING, color: '#FFFFFF'}).setOrigin(0.5,0.5);
+        let buttonYes = new Phaser.GameObjects.Sprite(scene, 100*scalingX, buttonNo.y,'month_done').setScale(0.75*scalingX, 0.75*scalingY);
+        let buttonYesText = new Phaser.GameObjects.Text(scene, buttonYes.x, buttonYes.y, 'Ja', {fontSize: 16*Constants.SCALING, color: '#FFFFFF'}).setOrigin(0.5,0.5);
+        
+        super(scene,x,y,[panel, contents, textElement, buttonYes, buttonYesText, buttonNo, buttonNoText, headerText]);
+        this.parentScene = parentScene;
+        scene.add.existing(this);
+        this.buttonNo = buttonNo;
+        this.buttonYes = buttonYes;
+        this.buttonNoText = buttonNoText;
+        this.buttonYesText = buttonYesText;
+
+        // Behavior of the No button
+        this.buttonNo.setInteractive();
+        this.buttonNo.on('pointerdown', () => {
+            this.buttonNo.setTexture('month_done_pressed'); // Make the button appear "pressed"
+            this.buttonNo.once('pointerup', () => {
+                this.parentScene.eventEmitter.emit('interactiveDialogueClosed', 'warningDialogue', 'No');
+                this.buttonNo.setTexture('month_done');
+                this.scene.remove(Constants.SCENES.WARNING) // makes the dialouge disappear
+            });
+        });
+
+        // Behavior of the Yes button
+        this.buttonYes.setInteractive();
+        this.buttonYes.on('pointerdown', () => {
+            this.buttonYes.setTexture('month_done_pressed'); // Make the button appear "pressed"
+            this.buttonYes.once('pointerup', () => {
+                this.parentScene.eventEmitter.emit('interactiveDialogueClosed', 'warningDialogue', 'Yes');
+                this.buttonYes.setTexture('month_done');
+                this.scene.remove(Constants.SCENES.WARNING); // makes the dialouge disappear
+                if (this.parentScene.month.value > 4){
+                    this.parentScene.scene.add(Constants.SCENES.EXPLAIN, ExpainScene, false);
+                    this.parentScene.scene.launch(Constants.SCENES.EXPLAIN, {parent: this.parentScene});
+                }
+                else{
+                    this.parentScene.monthDoneBehavior(); // End the month
+                }
+
+            });
+        });
+    }
+}
+export default WarningDialogue;</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 21.07.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: NewsScene.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-Item.html">Item</a></li><li><a href="module-ItemPanel.html">ItemPanel</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li><li><a href="module-Storage.html">Storage</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="AiDialogue.html">AiDialogue</a></li><li><a href="AnswerBoxes.html">AnswerBoxes</a></li><li><a href="AssesmentDialogue.html">AssesmentDialogue</a></li><li><a href="Building.html">Building</a></li><li><a href="Button.html">Button</a></li><li><a href="ControllDialogue.html">ControllDialogue</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="DialogueScheduler.html">DialogueScheduler</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExperimentTime.html">ExperimentTime</a></li><li><a href="FinalSummary.html">FinalSummary</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="InformerBanner.html">InformerBanner</a></li><li><a href="InteractionScene.html">InteractionScene</a></li><li><a href="LikertScale.html">LikertScale</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="Management.html">Management</a></li><li><a href="ManagementDialogue.html">ManagementDialogue</a></li><li><a href="Market.html">Market</a></li><li><a href="MarketDialogue.html">MarketDialogue</a></li><li><a href="MedalFeedback.html">MedalFeedback</a></li><li><a href="MessageDialogue.html">MessageDialogue</a></li><li><a href="module-ItemPanel-ItemDisplay.html">ItemPanel~ItemDisplay</a></li><li><a href="module-ItemPanel-ItemPanel.html">ItemPanel~ItemPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Item-Item.html">Item~Item</a></li><li><a href="module-Storage-StorageEntry.html">Storage~StorageEntry</a></li><li><a href="module-Storage-StoragePanel.html">Storage~StoragePanel</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="PartDisplay.html">PartDisplay</a></li><li><a href="Player.html">Player</a></li><li><a href="Preloader.html">Preloader</a></li><li><a href="Process.html">Process</a></li><li><a href="ProfitSummary.html">ProfitSummary</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="ProgressBarVertical.html">ProgressBarVertical</a></li><li><a href="RadioButton.html">RadioButton</a></li><li><a href="Storage.html">Storage</a></li><li><a href="StorageDialogue.html">StorageDialogue</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Tutorial.html">Tutorial</a></li><li><a href="Ui.html">Ui</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="Workshop.html">Workshop</a></li><li><a href="WorkshopDialogue.html">WorkshopDialogue</a></li><li><a href="WorkshopQueue.html">WorkshopQueue</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#addBars">addBars</a></li><li><a href="global.html#addBorder">addBorder</a></li><li><a href="global.html#addDescription">addDescription</a></li><li><a href="global.html#addOptimalProfit">addOptimalProfit</a></li><li><a href="global.html#addPlayerProfit">addPlayerProfit</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#done">done</a></li><li><a href="global.html#getAllOptimalProfits">getAllOptimalProfits</a></li><li><a href="global.html#getMonthOptimalProfit">getMonthOptimalProfit</a></li><li><a href="global.html#interrupt">interrupt</a></li><li><a href="global.html#resetHours">resetHours</a></li><li><a href="global.html#scaleHeight">scaleHeight</a></li><li><a href="global.html#scaleWidth">scaleWidth</a></li><li><a href="global.html#setMeterPercentage">setMeterPercentage</a></li><li><a href="global.html#setProduceAnimation">setProduceAnimation</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#work">work</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: NewsScene.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import Diagram from './Diagram.js';
+import MedalFeedback from './MedalFeedback.js';
+import DialogueScene from "./DialogueScene.js";
+import ItemPriceTable from './ItemPriceTable.js';
+import { MONTHS, MEDAL_FEEDBACK } from './Constants.js';
+import { getAllOptimalProfits } from './ProfitSummary.js';
+import Button from './Button.js';
+import InteractionScene from './InteractionScene.js';
+
+/**
+ * @classdesc
+ * This Class servs as a summary of the last month while providing
+ * information about the coming month. 
+ * After closing this dialogue, the new month will start.
+ * @class NewsScene
+ * @extends InteractionScene
+ * @constructor
+ */
+class NewsScene extends InteractionScene
+{
+    constructor()
+    {
+        super('newsScene');
+    }
+
+    /**
+     * Create all the gameObjects necessary to create the scene.
+     */
+    create()
+    {
+        /**
+         * The background sprite. It is a black, slightly transparent rectangle, that is used to darken the
+         * background.
+         * @type {Phaser.GameObjects.Sprite}
+         * @see [Phaser.GameObjects.Sprite]{@link https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html}
+         */
+        this.background = new Phaser.GameObjects.Sprite(this, 0,0,'shadow-background').setScale(9);
+        
+        // making the backround transparent to animate its fade in later
+        this.background.alpha = 0;
+        // add the background to the scene
+        this.add.existing(this.background);
+        this.createDialogue();
+        
+        // We overwrite the typical panel texture by a newspaper texture.
+        this.panel.panel.setTexture('newspaper');
+        // we don't need the white paper texture in this case.
+        this.panel.contents.destroy();
+        // we also do not need the close button as we will have a "continue" button.
+        this.panel.buttonRound.destroy();
+        // delete the cross...
+        this.panel.cross.destroy();
+        // ...and the header text
+        this.panel.headerText.destroy();
+        this.addDiagram();
+        this.displayPriceChanges();
+        this.displayNewResouces();
+        this.addButtonSection();
+        // animate the fade in for the black backround.
+        this.tweens.add(
+            {
+                targets: this.background,
+                alpha: 1,
+                duration: 1000
+            }
+        );
+        // make the newpaper appear.
+        this.fadeIn();
+
+    }
+
+
+    /**
+     * This function displays the price changes on the newspaper.
+     * It just creates a new {@link PriceTable} object and changes it to fit inside the newspaper
+     * displayed in this scene.
+     */
+    displayPriceChanges()
+    {
+        let newPrices = [];
+        let oldPrices = [];
+        let title = new Phaser.GameObjects.Text(this, -200,80, 'New profit', {fontSize: 20, color: '#000'}).setOrigin(0.5);
+        this.mainScene.items.forEach(item =>
+            {
+                newPrices.push(item.profit[this.mainScene.month]);
+                oldPrices.push(item.profit[this.mainScene.monthLookUP[this.mainScene.num_month-1]]);
+            });
+        /**
+         * The price table that is used to display the price changes on the newspaper.
+         * @type {ItemPriceTable}
+         */
+        this.priceTable = new ItemPriceTable(
+        {
+            scene: this,
+            x: -170,
+            y: 180, 
+            pricesOld: oldPrices,
+            pricesNew: newPrices
+        });
+        this.priceTable.title.destroy();
+        this.priceTable.spriteFrame.destroy();
+        this.priceTable.setScale(1);
+        this.panel.add(title);
+        this.panel.add(this.priceTable);
+    }
+
+
+    /**
+     * Adds the button to continue with the next month.
+     */
+    addButtonSection()
+    {
+        let title = new Phaser.GameObjects.Text(this, 205,80, 'Start month', {fontSize: 20, color: '#000'}).setOrigin(0.5);
+        let descriptionText = new Phaser.GameObjects.Text(this, title.x-5,140, 'Click on "Start" to\nbegin a new\nmonth.', {fontSize: 15,color: '#000'}).setOrigin(0.5);
+        let button = new Phaser.GameObjects.Sprite(this, title.x,260, 'button-long');
+        button.displayWidth -= 30;
+        let buttonText = new Phaser.GameObjects.Text(this, button.x, button.y, 'Start', {fontSize: 18, color: '#fff'}).setOrigin(0.5);
+        this.panel.add([title, descriptionText, button, buttonText]);
+        button.setInteractive();
+        button.on('pointerdown', function()
+        {
+            button.setTexture('button-long-pressed');
+            button.once('pointerup', function()
+            {
+                this.mainScene.startTimer();
+                this.close();
+            }, this);
+            this.input.on('pointerup', function()
+            {
+                button.setTexture('button-long');
+            },this);
+        }, this);
+    }
+
+    /**
+     * Display the new resources available in the next month.
+     */
+    displayNewResouces()
+    {
+        let title = new Phaser.GameObjects.Text(this, 0,90, 'Available\nmaterial', {fontSize: 20, color: '#000', align: 'center'}).setOrigin(0.5);
+        let description = new Phaser.GameObjects.Text(this,0,150, 'This month Furniture\nC.O. has the following\nraw materials:', {fontSize: 15, color: '#000', align:'left'}).setOrigin(0.5);
+        let woodText = new Phaser.GameObjects.Text(this, -90,200, this.mainScene.player.availableWood[this.mainScene.month], {fontSize: 18, color: '#000'}).setOrigin(0.2);;
+        let woodPicture = new Phaser.GameObjects.Sprite(this, woodText.x+woodText.width, woodText.y, 'wood').setScale(0.05).setOrigin(0, 0.3);
+        let metalText = new Phaser.GameObjects.Text(this, woodText.x,woodText.y+30, this.mainScene.player.availableMetal[this.mainScene.month], {fontSize: 18, color: '#000'}).setOrigin(0.2);;
+        let metalPicture = new Phaser.GameObjects.Sprite(this, metalText.x+metalText.width, metalText.y, 'metal').setScale(0.05).setOrigin(0, 0.3);
+        this.panel.add([woodText, woodPicture, metalText, metalPicture, title, description]);
+        
+    }
+
+
+    /**
+     * Add the diagram to the dialogue
+     */
+    addDiagram()
+    {
+        if (!MEDAL_FEEDBACK){
+            this.diagram = new Diagram(
+                {
+                    scene: this,
+                    mainScene: this.mainScene,
+                    x : -140,
+                    y: 5,
+                    lpProfits: getAllOptimalProfits(this.mainScene.lpSolution),
+                    playerProfits: this.mainScene.player.monthlyProfit,
+                    months: MONTHS,
+                    height: 100,
+                    width: 510
+                });
+            
+            this.panel.add(this.diagram);
+        }
+        else{
+            this.diagram = new MedalFeedback(
+                {
+                    scene: this,
+                    mainScene: this.mainScene,
+                    x: 0,
+                    y: -10,
+                    lpProfits: getAllOptimalProfits(this.mainScene.lpSolution),
+                    playerProfits: this.mainScene.player.monthlyProfit,
+                    months: MONTHS,
+                    width: 500
+                });
+                this.panel.add(this.diagram);
+        }
+    }
+}
+
+export default NewsScene;</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 11.08.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

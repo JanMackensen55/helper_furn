@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: AnswerBoxes.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-Item.html">Item</a></li><li><a href="module-ItemPanel.html">ItemPanel</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li><li><a href="module-Storage.html">Storage</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="AiDialogue.html">AiDialogue</a></li><li><a href="AnswerBoxes.html">AnswerBoxes</a></li><li><a href="AssesmentDialogue.html">AssesmentDialogue</a></li><li><a href="Building.html">Building</a></li><li><a href="Button.html">Button</a></li><li><a href="ControllDialogue.html">ControllDialogue</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="DialogueScheduler.html">DialogueScheduler</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExperimentTime.html">ExperimentTime</a></li><li><a href="FinalSummary.html">FinalSummary</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="InformerBanner.html">InformerBanner</a></li><li><a href="InteractionScene.html">InteractionScene</a></li><li><a href="LikertScale.html">LikertScale</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="Management.html">Management</a></li><li><a href="ManagementDialogue.html">ManagementDialogue</a></li><li><a href="Market.html">Market</a></li><li><a href="MarketDialogue.html">MarketDialogue</a></li><li><a href="MedalFeedback.html">MedalFeedback</a></li><li><a href="MessageDialogue.html">MessageDialogue</a></li><li><a href="module-ItemPanel-ItemDisplay.html">ItemPanel~ItemDisplay</a></li><li><a href="module-ItemPanel-ItemPanel.html">ItemPanel~ItemPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Item-Item.html">Item~Item</a></li><li><a href="module-Storage-StorageEntry.html">Storage~StorageEntry</a></li><li><a href="module-Storage-StoragePanel.html">Storage~StoragePanel</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="PartDisplay.html">PartDisplay</a></li><li><a href="Player.html">Player</a></li><li><a href="Preloader.html">Preloader</a></li><li><a href="Process.html">Process</a></li><li><a href="ProfitSummary.html">ProfitSummary</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="ProgressBarVertical.html">ProgressBarVertical</a></li><li><a href="RadioButton.html">RadioButton</a></li><li><a href="Storage.html">Storage</a></li><li><a href="StorageDialogue.html">StorageDialogue</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Tutorial.html">Tutorial</a></li><li><a href="Ui.html">Ui</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="Workshop.html">Workshop</a></li><li><a href="WorkshopDialogue.html">WorkshopDialogue</a></li><li><a href="WorkshopQueue.html">WorkshopQueue</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#addBars">addBars</a></li><li><a href="global.html#addBorder">addBorder</a></li><li><a href="global.html#addDescription">addDescription</a></li><li><a href="global.html#addOptimalProfit">addOptimalProfit</a></li><li><a href="global.html#addPlayerProfit">addPlayerProfit</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#done">done</a></li><li><a href="global.html#getAllOptimalProfits">getAllOptimalProfits</a></li><li><a href="global.html#getMonthOptimalProfit">getMonthOptimalProfit</a></li><li><a href="global.html#interrupt">interrupt</a></li><li><a href="global.html#resetHours">resetHours</a></li><li><a href="global.html#scaleHeight">scaleHeight</a></li><li><a href="global.html#scaleWidth">scaleWidth</a></li><li><a href="global.html#setMeterPercentage">setMeterPercentage</a></li><li><a href="global.html#setProduceAnimation">setProduceAnimation</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#work">work</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: AnswerBoxes.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import { RadioButton } from "./LikertScale.js";
+
+/**
+ * @classdesc
+ * This class implements the answers to a question, displaying
+ * radio buttons that can be checked. Depending on the checked button
+ * the class tests if the answers is right or wrong.
+ * @class AnswerBoxes
+ * @extends Phaser.GameObjects.Container
+ * @see [Phaser.GameObjects.Container]{@link https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html}
+ * @constructor
+ * @param {object} data.scene the scene where the AnswerBoxes should be rendered in. Normally in the ControlDialogue.
+ * @param {Number} data.x the x coordinate of the buttons
+ * @param {Number} data.y the y coordinate of the buttons
+ * @param {Array} data.answers List of possible answers
+ * @param {Number} data.numRightAnswer Number of the correct answer 
+ */
+class AnswerBoxes extends Phaser.GameObjects.Container{
+
+    constructor(data){
+        let {scene, x, y, answers, numRightAnswer} = data;
+        let buttons = [];
+        let texts = [];
+        let initX = -200;
+        let stepWidth = 400 / (answers.length-1)
+        for (let i=0; i &lt; answers.length; i++)
+        {
+            buttons.push(new RadioButton({scene:scene, x:initX+stepWidth*i, y:0, value:i}).setScale(0.8));
+            texts.push(new Phaser.GameObjects.Text(scene, initX+stepWidth*i, -25, answers[i], {fontSize: 12, color: "#000"}).setOrigin(0.5,0.5));
+        }
+        
+       super(scene,x,y,buttons.concat(texts));
+       this.numRightAnswer = numRightAnswer;
+       this.activeButton;
+       this.buttons = buttons;
+       this.addCheckedListeners();
+    }
+
+    /**
+     * Uncheck the other buttons to ensure that only one radioButton is checked at the same time.
+     * @param {RadioButton} exception the button that should not be unchecked (which is the button that was
+     * recently clicked).
+     */
+    uncheckButtons(exception)
+    {
+         this.activeButton = exception;
+         this.buttons.map(x => 
+             {
+                 if(x !== exception){
+                     x.isChecked = false;
+                 }
+             });
+    }
+ 
+     /**
+      * Adds a checked listener for each radio button.
+      * This helps to identify which button has been clicked. This information is used to unceck the other buttons
+      * that might be active. With this method it is ensured, that only one radio button at a time is checked.
+      */
+    addCheckedListeners()
+    {
+         this.buttons.forEach(button =>
+             {
+                 button.on('buttonChecked', this.uncheckButtons,this)
+             });
+    }
+
+    /**
+     * Check if one of the boxes is selected
+     * @returns ture if an answer is given else false
+     */
+    answerGiven()
+    {
+        if (this.activeButton){
+            return true
+        }
+        return false
+    }
+
+    /**
+     * Check if the right box is selected
+     * @returns true if answer is right else false
+     */
+    rightAnswer()
+    {
+        if(this.activeButton.value == this.numRightAnswer){
+            return true
+        }
+        return false
+    }
+    
+}export default AnswerBoxes</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 11.08.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

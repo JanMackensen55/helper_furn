@@ -1,0 +1,31 @@
+case 169:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Da ich meine Rohstoffe gut aufgebraucht habe und zumindest anfangs viele Regale produzieren konnte die gut Geld gaben. 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Ich denke perfekt war es nicht, weil ich noch viele Rohstoffe übrig hatte aber nah dran. 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Also Mike, erstmal entspann dich und komm mal Runter min Jung. Schnauf mal durch und jetzt erkläre ich es dir: Schau dir zu beginn erstmal an wieviele Rohstoffe zur Verfügung sind. Dann schaust du dir im Management 1 und 2 jeweils an wie das Verhältnis zwischen Profit also den Goldtalern und den Stunden ist. Z.b. kann es sein dass du 8 Stunden investieren musst in Fabrik A und B für 1 Tisch. Dann schaust du dir noch an wie viele Rohstoffe du für dieses Produkt brauchst und überlegst dir nun was du am besten produziert. Fabrik A und B sind für Tische und Stühle und Fabrik C und D für Regale oder Betten. Du überlegst dir also was eher Sinn macht und wie wir den meisten Profit rauskriegen. Ich glaube an dich! 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Also Mike, hol dir erstmal ein Kaffee und setz dich dann zu mir ja. Du musst wie gesagt abwägen welche Produkte zu den Rohstoffen passen die zur Verfügung stehen und für welche ein ideales Verhältnis zwischen Profit und Arbeitszeit da ist. Also du musst auch schauen wie viel wir überhaupt in welchen Fabriken produzieren können anhand der Stundenanzahl. Erst Rohstoffe anschauen, dann Profit je Möbelstück. Dann schauen wie das im Verhältnis zur aufgebrachten Stundenanzahl passt und dann schaust du, dass du ein gewisses Gleichgewicht in die Arbeitszeitverteilung bringst also nicht nur in Fabrik A und B für Management 1 Stühle und Tische produzieren, sondern auch Fabrik C und D auslasten.  
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Also Mike du hast im Management 2 also Betten und Regale einen sehr guten Job gemacht, ich bin stolz auf dich! Genau so habe ich auch die Aufträge rausgegeben, vor allem auf Regale und um die Arbeitszeit ideal auszufüllen noch ein Bett. Bei Management 1 allerdings hättest du besser auf die Fabrikauslastung achten sollen. Die Fabrika A mit den Stuhlbeinen wäre voll ausgelastet mit 24 Stunden und Fabrik B hätte nur 6 Stunden zu tun und wäre dann am rumsitzen. Am besten wäre es hier gewesen mehr Tische zu produzieren um Fabrik B auszulasten, da auch genug Rohstoffe zur Verfügung standen. Aber toll gemacht Mike, ich sehe deine Fortschritte! 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Ähnlich wie im letzten Monat Mike, gut gemacht! Die Regale habe ich genauso produzieren lassen und auch 1 Bett, nur bei Management Tisch/Stuhl hättest du wieder mehr auf die Tische legen können, du hattest noch sehr viel Metall als Rohstoff übrig und auch wieder sehr viel Arbeitszeit in Fabrik B. Die Bäume wachsen auch nicht so schnell nach, aber trotzdem toppi gemacht! 

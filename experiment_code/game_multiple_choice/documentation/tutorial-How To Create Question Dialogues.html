@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game tutorialHow To Create Question Dialogues</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-Slider.html">Slider</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Button.html">Button</a></li><li><a href="Card.html">Card</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="Dialogue.html">Dialogue</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExplainScene.html">ExplainScene</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="MissingPanel.html">MissingPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Slider-Slider.html">Slider~Slider</a></li><li><a href="module-Slider-SliderComponent.html">Slider~SliderComponent</a></li><li><a href="NewsDialogue.html">NewsDialogue</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="OkayScene.html">OkayScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="Player.html">Player</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="SummaryScene.html">SummaryScene</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Timer.html">Timer</a></li><li><a href="UI.html">UI</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="WarningScene.html">WarningScene</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			<section class="tutorial-section">
+
+<header>
+    
+
+    <h2>How To Create Question Dialogues</h2>
+</header>
+
+<article>
+    <p>This tutorial shows how to use different dialogue classes to interact with the participants. Each class serves a different purpose as you will see in the following.</p>
+<h2>AssessmentDialogue - What Do You Feel About Your Answer?</h2>
+<img src="./img/assessment.png" style="zoom:60%;" />
+<p>Using the <a href="./AssesmentDialogue.html">AssessmentDialogue</a> we can obtain data on what the participant thinks on his or her performance. It consists of a likert-scale to evaluate the own performance as well as a text field to provide a reason.</p>
+<h3>Adding a question to SoSciSurvey</h3>
+<p>In order to store the answers of the participant, a placeholder needs to be created in the SoSciSurvey instance. If you uploaded the project like shown in  [this tutorial](./tutorial-Uploading Project to SosciSurvey.html), you will already have a few Placeholders.</p>
+<p><img src="./img/questions.png" alt=""></p>
+<ul>
+<li>The field we are looking for is <code>AS Assessment</code>.</li>
+<li>The Questions you add under the AS Assessment field will correspond to one AssessmentDialogue. Thus, in this example there are already 2 Assessments.</li>
+<li>To add another placeholder for a third assessment, click <code>Add Question</code>, choose a name, set the type to <code>internal Variables</code> and save your changes:</li>
+</ul>
+<img src="./img/add_assessment.png" alt="add_assessment" style="zoom:100%;" />
+<ul>
+<li>After that, the question you have created appears on the left bar.</li>
+<li>Click it and add two variables inside the question.</li>
+<li>the variable with id $01$ corresponds to the Likert-scaled answer and the variable with id $02$ is the free-text answer.<img src="./img/add_likert.png" alt="add_likert"></li>
+<li>Now your question can be linked to the game!</li>
+</ul>
+<h3>Create an AssessmentDialogue in the Game</h3>
+<p>To make the question appear in the game, it must be created. Therefore you can use two approaches</p>
+<h4>Using the ScenePlugin</h4>
+<p>A way to directly instantiate an AssessmentDialogue is using the ScenePlugin from Phaser. Basically you can start a dialogue from wherever you want. Suppose you are in the <a href="./MainScene.html">MainScene</a> and you want to start a Dialogue, when the third month is reached. Inside the <a href="./MainScene.html#nextMonth">nextMonth</a> function you can write something like:</p>
+<pre class="prettyprint source lang-javascript"><code>if (this.month.value === 2) // months count from zero
+{
+  this.scene.launch('assesmentDialogue', 
+                            {mainScene: this, title: &quot;&quot;, question: &quot;&quot;,
+                             questionNumber: 3
+                            });
+}
+</code></pre>
+<p>This way, the AssessmentDialogue starts. Note That the Title and question are already filled in by default. The <code>questionNumber</code>is very important since it allows to fill the values to  the corresponding variable in SoSciSurvey. An AssessmentDialogue with questionNumber: 3 will write its values inside the variable &quot;AS03&quot;. Make sure you have created one as described above.</p>
+<p><strong>Things to note</strong></p>
+<ul>
+<li>in this case <code>this</code>corresponds to a <code>MainScene</code>instance. It is recommended to run dialogues off the MainScene, because it takes care of the camera position a placement of dialogues. If you want to run a dialogue from a different class, simply pass an instance of the <code>MainScene</code>.</li>
+</ul>
+<p><strong>Drawbacks using this approach</strong></p>
+<p>Using <code>scene.launch</code>has the drawback to launch the scene immediately, so it can happen that multiple dialogues are launched at the same time, causing multiple windows at once. To overcome that, you can use the DialogueSchedule Class.</p>
+<h4>Using the DialogueScheduler</h4>
+<p>With this class you can add multiple dialogues and decide when to run them. By default, the first dialogue you add, is the first that will be launched. After it is closed, the second dialogue is launched until each dialogue has been launched and closed. For more information see <a href="./DialogueSchedule.html">DialogueSchedule</a>.</p>
+<p><strong>Example Use</strong></p>
+<pre class="prettyprint source lang-javascript"><code>if (this.month.value === 2){
+  this.schedule.addDialogue('assesmentDialogue', 
+                            {mainScene: this, title: &quot;&quot;, question: &quot;&quot;,
+                             questionNumber: 1});
+}
+</code></pre>
+<p>Because this runs inside the <code>nextMonth</code>function, we do not need to do more because <code>schedule.run()</code>will already be called in this function. However for your individual schedules you will need to run the schedule to start them.</p>
+<h2>aiDialogue - How Well is Mike Doing?</h2>
+<img src="./img/ai_dialogue.png" style="zoom:70%;" />
+<p>An <a href="./AiDialogue.html">AiDialogue</a> can be used to let the participant evaluate a specific solution. It is very similar to an <a href="./AssessmentDialogue.html">AssessmentDialogue</a>, because it has a Likert-scaled answer and a free-text answer. Additionally it proposes mikes solution to a certain problem.</p>
+<h3>Adding a question to SoSciSurvey</h3>
+<p>On SosciSurvey it is quite similar to the creation of a new AssessmentDialogue question. In this case, the question you are looking for is <code>FB Feedback to Mike</code>. Add a new question and add the a variable with Id $01$ for the Likert answer and $02$ for the free-text answer. Thats it!</p>
+<h3>Create an AiDialogue in the Game</h3>
+<p>The creation without the <code>DialogueShedule</code>is analogous, only with a different keyword at the start. Thus it is left out. See the previous section on the AssessmentDialogue if you want to use that approach.</p>
+<p>To create an AiDialogue we need to provide a bit more information:</p>
+<pre class="prettyprint source lang-javascript"><code>if (this.month.value === 11)
+{
+  this.schedule.addDialogue('aiDialogue', 
+                            {mainScene: this, 
+                             title: &quot;&quot;, 
+                             question: &quot;&quot;, 
+                             questionNumber: 1, 
+                             aiData: {
+                               chair: {
+                                 profit: this.chair.profit[this.month.value-1],
+                                 solution: 6
+                               },
+                               bed: {
+                                 profit: this.bed.profit[this.month.value-1],
+                                 solution: 1
+                               },
+                               bookcase: {
+                                 profit: this.bookcase.profit[this.month.value-1],
+                                 solution: 4
+                               },
+                               table: {
+                                 profit: this.table.profit[this.month.value-1],
+                                 solution: 0
+                               },
+                              material: {
+                                  wood: this.player.initialWood[this.month.value-1],
+                                  metal: this.player.initialMetal[this.month.value-1]
+                }
+ }
+</code></pre>
+<p>The class will use this data in order to display custom settings for mike's solution.</p>
+<p><strong>Note that here you start again with questionNumber 1, if this is the first aiDialogue, regardless of already heaving dialogues of other classes. This is because the variables are different ones in SoSciSurvey. Make sure the number always corresponds to the question number in SoSciSurvey.</strong></p>
+<h2>TextDialogue - Is there anything you want to say?</h2>
+<p><img src="./img/text_dialogue.png" alt="text_dialogue"></p>
+<p>Use the TextDialogue to retrieve free-text answers from the participants.</p>
+<h3>Adding a question to SoSciSurvey</h3>
+<p>Like for every value from the participant we want to save, it is necessary, to create a corresponding variable that stores the answers.</p>
+<p>For the TextDialogue, use the <code>AN Answers</code>Question. Unlike the other versions, the placeholder for the answers are one level below, because we do not have Likert- and text answers:</p>
+<p><img src="./img/free-text_answers.png" alt="free-text_answers"></p>
+<p>In order to add placeholders for the answers, provide a description for each variable. The number in the ID column corresponds to the question number you want to use in the implementation.</p>
+<h3>Create a TextDialogue in the Game</h3>
+<p>Like for the other dialogues, you can feel free to launch the scene directly</p>
+<pre class="prettyprint source lang-javascript"><code>this.scene.launch('textDialogue', {mainScene: this, avatar: 'mike', title: PROVIDE_A_TITLE, question: PROVIDE_A_QUESTION, questionNumber: NUMBER});
+</code></pre>
+<p>Or to use the dialogueSchedule</p>
+<pre class="prettyprint source lang-javascript"><code>this.schedule.addDialogue('textDialogue', {mainScene: this, avatar: 'mike', title: PROVIDE_A_TITLE, question: PROVIDE_A_QUESTION, questionNumber: NUMBER});
+</code></pre>
+<ul>
+<li><strong>this</strong> - in this example the dialogue is launched from the <a href="./MainScene.html">MainScene</a> but you can provide any active scene instance instead of <strong>this</strong>
+<ul>
+<li>For example: <a href="./ManagementDialogue.html">ManagementDialogue</a>, <a href="./MarketDialogue.html">MarketDialogue</a> etc.</li>
+</ul>
+</li>
+<li><strong>schedule</strong> - the DialogueSchedule instance that has already been created in this class.</li>
+<li><strong>textDialogue</strong> - The key of the Textfield dialogue scene.</li>
+<li><strong>mainScene</strong> - This is the instance of MainScene and is used for positioning. Every Scene that extends the <a href="./DialogueScene.html">DialogueScene</a> needs to have a mainScene instance that can be accessed.</li>
+<li><strong>title</strong> - Provide a text that should be displayed at the top of the dialogue like shown in the picture at the top.</li>
+<li><strong>question</strong> - Here you can provide the text, that should be displayed below the title.  Use \n for a line break.</li>
+<li><strong>questionNumber</strong> - This is the variable ID discussed above. If I choose 1 as number, the value of this Answer will be written inside <strong>first question</strong>.</li>
+<li><strong>avatar</strong>: Tells the scene that it should place the avatar from mike in the scene.</li>
+</ul>
+<p><strong>Note: The textfield is an HTML element. The positioning will be wrong if viewed on the local machine. On SosciSurvey the position should be correct.</strong></p>
+</article>
+
+</section>
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 21.07.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

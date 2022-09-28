@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: Preloader.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-Item.html">Item</a></li><li><a href="module-ItemPanel.html">ItemPanel</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li><li><a href="module-Storage.html">Storage</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="AiDialogue.html">AiDialogue</a></li><li><a href="AnswerBoxes.html">AnswerBoxes</a></li><li><a href="AssesmentDialogue.html">AssesmentDialogue</a></li><li><a href="Building.html">Building</a></li><li><a href="Button.html">Button</a></li><li><a href="ControllDialogue.html">ControllDialogue</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="DialogueScheduler.html">DialogueScheduler</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExperimentTime.html">ExperimentTime</a></li><li><a href="FinalSummary.html">FinalSummary</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="InformerBanner.html">InformerBanner</a></li><li><a href="InteractionScene.html">InteractionScene</a></li><li><a href="LikertScale.html">LikertScale</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="Management.html">Management</a></li><li><a href="ManagementDialogue.html">ManagementDialogue</a></li><li><a href="Market.html">Market</a></li><li><a href="MarketDialogue.html">MarketDialogue</a></li><li><a href="MedalFeedback.html">MedalFeedback</a></li><li><a href="MessageDialogue.html">MessageDialogue</a></li><li><a href="module-ItemPanel-ItemDisplay.html">ItemPanel~ItemDisplay</a></li><li><a href="module-ItemPanel-ItemPanel.html">ItemPanel~ItemPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Item-Item.html">Item~Item</a></li><li><a href="module-Storage-StorageEntry.html">Storage~StorageEntry</a></li><li><a href="module-Storage-StoragePanel.html">Storage~StoragePanel</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="PartDisplay.html">PartDisplay</a></li><li><a href="Player.html">Player</a></li><li><a href="Preloader.html">Preloader</a></li><li><a href="Process.html">Process</a></li><li><a href="ProfitSummary.html">ProfitSummary</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="ProgressBarVertical.html">ProgressBarVertical</a></li><li><a href="RadioButton.html">RadioButton</a></li><li><a href="Storage.html">Storage</a></li><li><a href="StorageDialogue.html">StorageDialogue</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Tutorial.html">Tutorial</a></li><li><a href="Ui.html">Ui</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="Workshop.html">Workshop</a></li><li><a href="WorkshopDialogue.html">WorkshopDialogue</a></li><li><a href="WorkshopQueue.html">WorkshopQueue</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#addBars">addBars</a></li><li><a href="global.html#addBorder">addBorder</a></li><li><a href="global.html#addDescription">addDescription</a></li><li><a href="global.html#addOptimalProfit">addOptimalProfit</a></li><li><a href="global.html#addPlayerProfit">addPlayerProfit</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#done">done</a></li><li><a href="global.html#getAllOptimalProfits">getAllOptimalProfits</a></li><li><a href="global.html#getMonthOptimalProfit">getMonthOptimalProfit</a></li><li><a href="global.html#interrupt">interrupt</a></li><li><a href="global.html#resetHours">resetHours</a></li><li><a href="global.html#scaleHeight">scaleHeight</a></li><li><a href="global.html#scaleWidth">scaleWidth</a></li><li><a href="global.html#setMeterPercentage">setMeterPercentage</a></li><li><a href="global.html#setProduceAnimation">setProduceAnimation</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#work">work</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: Preloader.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import { disableNextButton } from './SosciWriter.js';
+import { ON_LOCAL_MACHINE } from './Constants.js';
+
+/**
+ * @classdesc
+ * This class ensures that all graphical elements are loaded before the start of the game.
+ * 
+ * @class Preloader
+ * @extends Phaser.Scene
+ * 
+ */
+export default class Preloader extends Phaser.Scene
+{
+    constructor()
+    {
+        super({ 
+            key:'preloader',
+            pack: {files: [
+                {
+                    type: 'image',
+                    key: 'logo',
+                    url: 'logo.png'
+                }
+            ]}
+        });
+    }
+
+    init()
+    {
+        if (!ON_LOCAL_MACHINE){
+            // hide the next button of the SosciSurvey website.
+            disableNextButton();
+        }
+    }
+    
+    preload()
+    {
+        this.add.image(400,300,'logo');
+        var progressBar = this.add.graphics();
+        var progressBox = this.add.graphics();
+        progressBox.fillStyle(0x222222, 0.8);
+        progressBox.fillRect(240, 430, 320, 50);
+        this.load.on('progress', function(value)
+        {
+            progressBar.clear();
+            progressBar.fillStyle(0xffffff,1);
+            progressBar.fillRect(250,440,300*value,30);
+        });
+        // Map
+        this.load.image('tiles-medival', 'RTS_medieval2-ex.png');
+        this.load.image('tiles-scifi', 'scifi_tilesheet2-ex.png');
+        this.load.tilemapTiledJSON('map', 'furniture_company_map.xml');
+
+        //Buildings
+        this.load.image('workshop-a', 'workshop-a.png');
+        this.load.image('workshop-b', 'workshop-b.png');
+        this.load.image('workshop-c', 'workshop-c.png');
+        this.load.image('workshop-d', 'workshop-d.png');
+        this.load.image('management_one', 'management_a.png');
+        this.load.image('management_two', 'management_b.png');
+        this.load.image('market', 'market.png');
+        this.load.image('storage', 'storage.png');
+        this.load.image('sign1', 'sign1.png');
+        this.load.image('sign2', 'sign2.png');
+        this.load.image('sign-a', 'Sign_legs.png');
+        this.load.image('sign-b', 'sign_b.png');
+        this.load.image('sign-c', 'sign_c.png');
+        this.load.image('sign-d', 'sign_d.png');
+
+        // Items
+        this.load.image('wood', 'wood_item.png');
+        this.load.image('metal', 'iron.png');
+        this.load.image('gold', 'gold.png');
+        this.load.image('chair', 'chair.png');
+        this.load.image('chair-leg', 'chair_leg.png');
+        this.load.image('chair-back', 'chair_back.png');
+        this.load.image('table', 'table.png');
+        this.load.image('table-leg', 'table_leg.png');
+        this.load.image('table-top', 'table_top.png');
+        this.load.image('bed', 'bed.png');
+        this.load.image('bed-frame', 'bed_frame.png');
+        this.load.image('bed-top', 'bed_top.png');
+        this.load.image('bookcase', 'shelf.png');
+        this.load.image('bookcase-leg', 'shelf_leg.png');
+        this.load.image('bookcase-top', 'shelf_top.png');
+
+        // UI elements
+        this.load.image('panel', 'panel_brown.png');
+        this.load.image('panel-long', 'panel_long_beige.png');
+        this.load.image('panel-contents', 'contents.png');
+        this.load.image('panel-white', 'panelWhite.png');
+        this.load.image('round-button', 'buttonRound_blue.png');
+        this.load.image('cross', 'iconCross_beige.png');
+        this.load.image('button-green', 'button_green.png');
+        this.load.image('button-green-pressed', 'button_green_pressed.png');
+        this.load.image('notes', 'notes_white.png');
+        this.load.image('ui-panel', 'upper_border.png');
+        this.load.image('tooltip', 'tooltip.png');
+        this.load.image('tooltip-right', 'tooltip_right_arr.png');
+        this.load.image('panel-blue', 'panel_blue.png');
+        this.load.image('arrow_up', 'grey_arrowUpWhite.png');
+        this.load.image('arrow_down', 'grey_arrowDownWhite.png');
+        this.load.image('no_changes', 'minus.png');
+        this.load.image('part-display', 'partDisplay.png');
+        this.load.image('button-square', 'button_square.png');
+        this.load.image('button-square-unpressed', 'button_square_unpressed.png');
+        this.load.image('button-long', 'buttonLong_blue.png');
+        this.load.image('button-long-pressed', 'buttonLong_blue_pressed.png');
+        this.load.image('wrench', 'wrench.png');
+        this.load.image('right', 'right.png');
+        this.load.image('left', 'left.png');
+        this.load.image('shadow-background', 'ShadowSummary.png');
+        this.load.image('newspaper', 'newspaper.png');
+        this.load.image('radio-button', 'grey_circle.png');
+        this.load.image('radio-button-checked', 'blue_boxTick.png');
+        this.load.image('audio-on', 'audio_on.png');
+        this.load.image('audio-off', 'audio_off.png');
+        this.load.image('arrow-right', 'arrowRight.png');
+        this.load.image('banner', 'banner.png');
+        this.load.image('medal_good', 'medal_good.png')
+        this.load.image('medal_very_good', 'medal_very_good.png')
+        this.load.image('medal_perfect', 'medal_perfect.png')
+
+        // Avatars
+        this.load.image('ann', 'ann.png');
+        this.load.image('mike', 'mike.png');
+
+        // Medals
+        this.load.image('medal-perfect', 'medal_perfect.png');
+        this.load.image('medal-very-good', 'medal_very_good.png');
+        this.load.image('medal-good', 'medal_good.png');
+        this.load.image('medal-hammer', 'medal_hammer.png');
+
+        // Progress bar
+        this.load.image('left-cap-shadow', 'barShadowLeft.png');
+        this.load.image('middle-shadow', 'barShadowMiddle.png');
+        this.load.image('right-cap-shadow', 'barShadowRight.png');
+        this.load.image('left-cap', 'barLeft.png');
+        this.load.image('right-cap', 'barRight.png');
+        this.load.image('middle', 'barMiddle.png');
+        this.load.image('left-cap-blue', 'barLeftBlue.png');
+        this.load.image('right-cap-blue', 'barRightBlue.png');
+        this.load.image('middle-blue', 'barMiddleBlue.png');
+        // Vertical bar resources
+        this.load.image('vertical_shadow_top', 'bar_vertical_shadow_top.png');
+        this.load.image('vertical_shadow_mid', 'bar_vertical_shadow_mid.png');
+        this.load.image('vertical_shadow_bottom', 'bar_vertical_shadow_bottom.png');
+        this.load.image('vertical_blue_top', 'bar_vertical_blue_top.png');
+        this.load.image('vertical_blue_mid', 'bar_vertical_blue_mid.png');
+        this.load.image('vertical_blue_bottom', 'bar_vertical_blue_bottom.png');
+        this.load.image('vertical_green_top', 'bar_vertical_green_top.png');
+        this.load.image('vertical_green_mid', 'bar_vertical_green_mid.png');
+        this.load.image('vertical_green_bottom', 'bar_vertical_green_bottom.png');
+
+        // Load Fonts
+        this.load.bitmapFont('black_font', 'pressstart.png', 'pressstart.xml');
+        this.load.bitmapFont('white_font', 'pressstart_white.png', 'pressstart_white.xml');
+        this.load.bitmapFont('red_font', 'pressstart_red.png', 'pressstart_red.xml');
+
+        // Load Sounds
+        this.load.audio('click', [ 'switch_001.ogg', 'switch_001.mp3' ]);
+        this.load.audio('error', [ 'error_004.ogg', 'error_004.mp3' ]);
+        this.load.audio('month_change', [ 'drop_004.ogg', 'drop_004.mp3' ]);
+        this.load.audio('coins', [ 'coins.ogg', 'coins.mp3']);
+
+        
+    }
+
+    create()
+    {
+        this.scene.start('main');
+    }
+    
+}</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 11.08.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

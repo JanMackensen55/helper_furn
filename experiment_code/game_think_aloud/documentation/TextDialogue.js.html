@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: TextDialogue.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-Slider.html">Slider</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Button.html">Button</a></li><li><a href="Card.html">Card</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="Dialogue.html">Dialogue</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExplainScene.html">ExplainScene</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="MissingPanel.html">MissingPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Slider-Slider.html">Slider~Slider</a></li><li><a href="module-Slider-SliderComponent.html">Slider~SliderComponent</a></li><li><a href="NewsDialogue.html">NewsDialogue</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="OkayScene.html">OkayScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="Player.html">Player</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="SummaryScene.html">SummaryScene</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Timer.html">Timer</a></li><li><a href="UI.html">UI</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="WarningScene.html">WarningScene</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: TextDialogue.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import {ON_LOCAL_MACHINE, TEXTDIALOGUE_WIDTH, TEXTDIALOGUE_HEIGHT} from './Constants.js';
+import DialogueScene from './DialogueScene.js';
+import FormUtil from './formUtil.js';
+import Button from './Button.js';
+import {writeAnswer} from './SosciWriter.js';
+
+
+
+/**
+ * @classdesc
+ * This class provides dialogue scene to get a user text input.
+ * In order to create this dialogue the values required by the DialogueScene must be provided on creation.
+ * Therefore, see {@link DialogueScene#init}.
+ * @calss TextDialouge
+ * In order to run this scene, it can be launched with phaser's scene plugin.
+ * Additionaly, a title and a question text should be provided.
+ * @example
+ * // go to the place, where the scene should be started and insert the following line
+ * this.scene.launch('textDialogue', {mainScene: this, title: PROVIDE_A_TITLE, question: PROVIDE_A_QUESTION questionNumber: NUMBER});
+ * // "this" must be a scene, because this.scene points at the scene manager of the specific scene.
+ * 
+ */
+class TextDialogue extends DialogueScene
+{
+    constructor()
+    {
+        super('textDialogue');
+    }
+
+    /**
+     * This method builds the graphical elements of the TextDialogue
+     */
+    create()
+    {
+        /**
+         * This is the title of the dialogue.
+         * @type {String}
+         */
+        this.title = this.data.title;
+
+        /**
+         * The question number specifies in what sosci survey item the value is stored.
+         * This is important, if there are multiple text dialogues to keep track of the different questions.
+         * @type {number}
+         */
+        this.questionNumber = this.data.questionNumber;
+        
+        /**
+         * The question that is displayed to the user above the input field, where the player can 
+         * type in the answer.
+         * @type {String}
+         */
+        this.question = this.data.question;
+        this.height = TEXTDIALOGUE_HEIGHT;
+        this.width = TEXTDIALOGUE_WIDTH;
+        this.createDialogue(this.title);
+        this.renderQuestion();
+        this.panel.disableCloseButton();
+        let sendButton = new Button(this,90,150,'summaryButton', 'summaryButtonPressed','Absenden',this.sendText,this);
+        sendButton.setButtonScale(0.75);
+        this.panel.add(sendButton);
+        /**
+         * The form util takes care of the setup of the text area.
+         * @type {FormUtil}
+         */
+        this.formUtil = new FormUtil({
+            scene: this
+        });
+        // Set up the textarea to be displayed at the right place
+        this.formUtil.scaleToGameW('textarea', .4);
+        this.formUtil.scaleToGameH('textarea',.3);
+        this.formUtil.placeElementAt(400,450, 'textarea', true, true);
+        this.formUtil.disableResize('textarea');
+        this.fadeIn(this.showTextArea); // create the dialogue, by animating the panel given in the super class.
+        
+    }
+
+    /**
+     * Makes the HTML text field visible
+     */
+    showTextArea()
+    {
+        this.formUtil.showTextArea('textarea');
+    }
+
+    /**
+     * Displays the quesiton on the dialogue.
+     */
+    renderQuestion()
+    {
+        this.questionElem = new Phaser.GameObjects.BitmapText(this.mainScene, 0,-this.height/2+90, 'pressstart', this.question, 11, Phaser.GameObjects.BitmapText.ALIGN_LEFT).setOrigin(0.5);
+        this.panel.add(this.questionElem);
+    }
+
+    /**
+     * This function sends the text that has been typed in by the player
+     * via the Sosci Writer.
+     * If [ON_LOCAL_MACHINE]{@link module:Constants#ON_LOCAL_MACHINE} is set to true,
+     * the value is just being printed.
+     */
+    sendText()
+    {
+        let textarea = document.getElementById('textarea');
+        if (ON_LOCAL_MACHINE) console.log(textarea.value);
+        else writeAnswer(this.questionNumber, textarea.value);
+        textarea.value = '';
+        this.formUtil.hideTextArea('textarea');
+        this.close();
+    }
+
+    /**
+     * Adjust the size of the question text.
+     * @param {number} size the desired fontsize for the question
+     */
+    setQuestionFontSize(size)
+    {
+        this.questionElem.setFontSize(size);
+    }
+
+}
+export default TextDialogue;</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 21.07.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

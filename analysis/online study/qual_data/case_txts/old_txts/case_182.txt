@@ -1,0 +1,32 @@
+case 182:
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Produziere von den Möbeln am meisten, die am meisten Geld einbringen. 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Schaue wie das Verhältnis von Eisen und Holz ist sodass du die Ressourcen gut ausnutzt. 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher schlecht
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Es gibt mehr Metall als Holz und Tische geben mehr Profit als Stühle, deswegen solltest du mehr Tische produzieren. 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ sehr gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Regale geben am meisten Profit deswegen sollten sie am meisten hergestellt werden 
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Ich hatte Holz übrig aber das Metall habe ich verarbeitet.
+ 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Ich denke ich kam gut hin mit der Zeit 

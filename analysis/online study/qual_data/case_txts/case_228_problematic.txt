@@ -1,0 +1,32 @@
+case 228:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher schlecht
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+weil ich nicht oft online spiele spiele 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher schlecht
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+ich hatte kein metall mehr, weswegen ich nicht alles bauen konnte. 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+du könntest nochmal genau schauen was dir dazu einfällt und es dann machen 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+ich denke du solltest schauen was für material dir zur verfügung steht
+ 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+das sieht ganz okay aus, so könnest du es versuchen 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ eher schlecht
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Ich weiß nicht ob das eine so gute idee ist 

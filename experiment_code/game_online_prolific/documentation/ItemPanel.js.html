@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: ItemPanel.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-Item.html">Item</a></li><li><a href="module-ItemPanel.html">ItemPanel</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li><li><a href="module-Storage.html">Storage</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="AiDialogue.html">AiDialogue</a></li><li><a href="AnswerBoxes.html">AnswerBoxes</a></li><li><a href="AssesmentDialogue.html">AssesmentDialogue</a></li><li><a href="Building.html">Building</a></li><li><a href="Button.html">Button</a></li><li><a href="ControllDialogue.html">ControllDialogue</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="DialogueScheduler.html">DialogueScheduler</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExperimentTime.html">ExperimentTime</a></li><li><a href="FinalSummary.html">FinalSummary</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="InformerBanner.html">InformerBanner</a></li><li><a href="InteractionScene.html">InteractionScene</a></li><li><a href="LikertScale.html">LikertScale</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="Management.html">Management</a></li><li><a href="ManagementDialogue.html">ManagementDialogue</a></li><li><a href="Market.html">Market</a></li><li><a href="MarketDialogue.html">MarketDialogue</a></li><li><a href="MedalFeedback.html">MedalFeedback</a></li><li><a href="MessageDialogue.html">MessageDialogue</a></li><li><a href="module-ItemPanel-ItemDisplay.html">ItemPanel~ItemDisplay</a></li><li><a href="module-ItemPanel-ItemPanel.html">ItemPanel~ItemPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Item-Item.html">Item~Item</a></li><li><a href="module-Storage-StorageEntry.html">Storage~StorageEntry</a></li><li><a href="module-Storage-StoragePanel.html">Storage~StoragePanel</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="PartDisplay.html">PartDisplay</a></li><li><a href="Player.html">Player</a></li><li><a href="Preloader.html">Preloader</a></li><li><a href="Process.html">Process</a></li><li><a href="ProfitSummary.html">ProfitSummary</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="ProgressBarVertical.html">ProgressBarVertical</a></li><li><a href="RadioButton.html">RadioButton</a></li><li><a href="Storage.html">Storage</a></li><li><a href="StorageDialogue.html">StorageDialogue</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Tutorial.html">Tutorial</a></li><li><a href="Ui.html">Ui</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="Workshop.html">Workshop</a></li><li><a href="WorkshopDialogue.html">WorkshopDialogue</a></li><li><a href="WorkshopQueue.html">WorkshopQueue</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#addBars">addBars</a></li><li><a href="global.html#addBorder">addBorder</a></li><li><a href="global.html#addDescription">addDescription</a></li><li><a href="global.html#addOptimalProfit">addOptimalProfit</a></li><li><a href="global.html#addPlayerProfit">addPlayerProfit</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#done">done</a></li><li><a href="global.html#getAllOptimalProfits">getAllOptimalProfits</a></li><li><a href="global.html#getMonthOptimalProfit">getMonthOptimalProfit</a></li><li><a href="global.html#interrupt">interrupt</a></li><li><a href="global.html#resetHours">resetHours</a></li><li><a href="global.html#scaleHeight">scaleHeight</a></li><li><a href="global.html#scaleWidth">scaleWidth</a></li><li><a href="global.html#setMeterPercentage">setMeterPercentage</a></li><li><a href="global.html#setProduceAnimation">setProduceAnimation</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#work">work</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: ItemPanel.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import Button from "./Button.js";
+import { PRODUCE_PARTS, PRODUCE_IN_MANAGEMENT} from "./Constants.js";
+import PartDisplay from "./PartDisplay.js";
+import EventDispatcher from "./EventDispatcher.js";
+
+/**
+ * @description
+ * This module ensures that all items are displayed in the game 
+ *
+ * @module ItemPanel
+ */
+
+/**
+ * @classdesc
+ * This class creates an item display class for each item.
+ * 
+ * @class ItemPanel
+ * @extends Phaser.GameObjects.Container
+ * @see [Phaser.GameObjects.Container]{@link https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html}
+ * @constructor
+ * @param {Phaser.Scene} scene the Phaser scene where the ItemPanel should be displayed. This is usually a {@link ManagementDialogue}.
+ * @param {Number} x Position of the ItemPanel on the x axis
+ * @param {Number} y Position of the ItemPanel on the y axis
+ * @param {Array} items List of all items included in the panel 
+ */
+export default class ItemPanel extends Phaser.GameObjects.Container
+{
+    constructor(data)
+    {
+        let {scene, x, y, items} = data;
+        super(scene,x,y);
+        let offset = 0;
+        items.forEach(item =>
+            {
+                let display = new ItemDisplay({
+                    scene: scene,
+                    x: x,
+                    y: y+offset,
+                    item: item
+                });
+                this.add(display);
+                offset += 90;
+            });
+    }
+}
+
+/**
+ * @classdesc
+ * This class creates a display of all values of an item.
+ * 
+ * @class ItemDisplay
+ * @extends Phaser.GameObjects.Container
+ * @see [Phaser.GameObjects.Container]{@link https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html}
+ * @constructor
+ * @param {Phaser.Scene} scene the Phaser scene where the ItemPanel should be displayed. This is usually a {@link ManagementDialogue}.
+ * @param {Number} x Position of the diagram on the x axis
+ * @param {Number} y Position of the diagram on the y axis
+ * @param {Item} item The item whose values are to be displayed 
+ */
+export class ItemDisplay extends Phaser.GameObjects.Container
+{
+    constructor(data)
+    {
+        let {scene, x ,y, item} = data;
+        let panel = new Phaser.GameObjects.Sprite(scene,0,0, 'panel-long');
+        panel.displayHeight = 95;
+        panel.displayWidth = 400;
+        let picture = item.image;
+        picture.x = -panel.displayWidth/2;
+        let header = new Phaser.GameObjects.Text(scene, 0,-panel.displayHeight/2+20, item.name, {fontSize: 17,color: '#000'}).setOrigin(0.5,0.5);
+        let profit = new Phaser.GameObjects.Text(scene, picture.x+picture.displayWidth+20,-15, 'Profit: ' +item.profit[scene.mainScene.month]+' ', {fontSize: 15,color: '#000'}).setOrigin(0,0);
+        let gold = new Phaser.GameObjects.Sprite(scene, profit.x+profit.width, profit.y,'gold').setOrigin(0.2,0.35).setScale(1.7);
+        let woodText = new Phaser.GameObjects.Text(scene, profit.x,profit.y+20, 'Cost: ' + item.costs.wood, {fontSize: 15,color: '#000'});
+        let wood = new Phaser.GameObjects.Sprite(scene, woodText.x+woodText.width, woodText.y,'wood').setOrigin(0.2,0.35).setScale(0.04).setOrigin(-0.1,0.2);
+        let metalText = new Phaser.GameObjects.Text(scene, wood.x+wood.displayWidth,woodText.y, item.costs.metal, {fontSize: 15,color: '#000'}).setOrigin(-1,0);
+        let metal = new Phaser.GameObjects.Sprite(scene, metalText.x+metalText.width, metalText.y, 'metal').setOrigin(-0.5,0.3).setScale(0.05);
+        let partOne = new Phaser.GameObjects.Sprite(scene, woodText.x+woodText.width, woodText.y, item.parts[0].imageCode).setOrigin(-0.1,0.3);
+        let partTwo = new Phaser.GameObjects.Sprite(scene, metalText.x+metalText.width, metalText.y, item.parts[1].imageCode).setOrigin(-0.5,0.3);
+        let workshopOne, workshopTwo, hoursOne, hoursTwo;
+        if (item.branch == 0)
+        {   
+            workshopOne = scene.mainScene.workshopA.image;
+            hoursOne = item.costs.hoursA;
+            workshopTwo = scene.mainScene.workshopB.image;
+            hoursTwo = item.costs.hoursB;
+        }
+        else if (item.branch == 1)
+        {
+            workshopOne = scene.mainScene.workshopC.image;
+            hoursOne = item.costs.hoursC;
+            workshopTwo = scene.mainScene.workshopD.image;
+            hoursTwo = item.costs.hoursD;
+            partTwo.x += 3;
+            partOne.setScale(0.6);
+            partTwo.setScale(0.8);
+        }
+        let durationOne =  new Phaser.GameObjects.Text(scene, woodText.x,metalText.y+20,'Duration(hrs.): '+hoursOne + ' in', {fontSize: 15,color: '#000'});
+        let pictureOne = new Phaser.GameObjects.Sprite(scene, durationOne.x+durationOne.width,durationOne.y,workshopOne).setScale(0.38).setOrigin(0,0.4);
+        let durationTwo =  new Phaser.GameObjects.Text(scene, pictureOne.x+pictureOne.displayWidth,durationOne.y,hoursTwo+' in', {fontSize: 15,color: '#000'}).setOrigin(-0.2,0);
+        let pictureTwo = new Phaser.GameObjects.Sprite(scene, durationTwo.x+durationTwo.width,durationTwo.y,workshopTwo).setScale(0.38).setOrigin(-0.3,0.4);
+        let buttonImage = 'notes';
+        let buttonImageScaling = 0.25;
+        let noteOffset = 10; // If the note image is shown istead of the arrow, push it to the left to stay in the middle of the button.
+        let partDisplay = new Phaser.GameObjects.Sprite(scene, 0,0,'').setVisible(false);
+        if (PRODUCE_PARTS)
+        {
+            partDisplay = new PartDisplay(
+            {
+                scene: scene,
+                x: 320,
+                y: 0,
+                item: item
+            });
+            partDisplay.alpha = 0;
+            buttonImage = 'right';
+            buttonImageScaling = 0.45;
+            noteOffset = 0;
+        }
+        super(scene,x,y,[panel, picture,header,profit,gold, durationOne,durationTwo,pictureOne,pictureTwo,partDisplay,woodText,metalText,wood,metal]);
+        this.partDisplay = partDisplay;
+        this.item = item;
+        this.button = new Button(scene, panel.width, 0, 'button-green', 'button-green-pressed',buttonImage,
+        this.buttonCallback,this);
+        this.button.setOrigin(1,0.5);
+        this.button.setButtonScale(0.9);
+        this.button.image.x -= noteOffset;
+        this.button.image.y -= noteOffset/4;
+        this.button.setImageScale(buttonImageScaling);
+        this.add([this.button]);
+        this.scene = scene;
+        this.emitter = EventDispatcher.getInstance();
+        this.profit = profit;
+    }
+
+    /**
+     * Changes the price of the item depending on the month
+     */
+    updatePrice()
+    {
+        this.profit.text = 'Profit: ' +this.item.profit[this.scene.mainScene.month];
+    }
+
+    /**
+     * This method ensures that the corresponding item can be built at the push of a
+     * button if the constant PRODUCE_PARTS is false. If this variable is true, the
+     * information about the parts will be displayed.
+     */
+    buttonCallback()
+    {
+       
+        if (PRODUCE_PARTS)
+        {
+            this.togglePartsDisplay();
+        }
+        else
+        {
+            let result = this.scene.management.produce(this.item);
+            if (result.status)
+            {
+                this.button.showMessage('Will be built!');
+                this.scene.clickSound.play();
+            }
+            else 
+            {
+                this.button.showMessage(result.reason, true);
+                this.scene.errorSound.play();
+            }
+        }
+                         
+    }
+
+    /**
+     * This method ensures that an information window is displayed over the parts.
+     */
+    togglePartsDisplay()
+    {
+        this.partDisplay.active = !this.partDisplay.active;
+        if (this.partDisplay.active)
+        {
+            this.emitter.emit('openedPartsDisplay', this.item.name);
+            this.button.image.setTexture('left');
+            let otherPanels = this.parentContainer.list.filter(e =>
+                {
+                    return e !== this;
+                });
+            otherPanels.forEach(e =>
+                {
+                    if (e.partDisplay.active)
+                    {
+                        e.partDisplay.active = false;
+                        e.button.image.setTexture('right');
+                    }                        
+                });
+        }else
+        {
+            this.button.image.setTexture('right');
+        }
+
+    }
+
+}</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 11.08.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

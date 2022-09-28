@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FurnitureCompany - Strategy Game Source: MainScene.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">FurnitureCompany - Strategy Game</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-Constants.html">Constants</a></li><li><a href="module-Game.html">Game</a></li><li><a href="module-GameProperties.html">GameProperties</a></li><li><a href="module-glpkUtility.html">glpkUtility</a></li><li><a href="module-Item.html">Item</a></li><li><a href="module-ItemPanel.html">ItemPanel</a></li><li><a href="module-ItemPriceTable.html">ItemPriceTable</a></li><li><a href="module-SosciWriter.html">SosciWriter</a></li><li><a href="module-Storage.html">Storage</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="AiDialogue.html">AiDialogue</a></li><li><a href="AnswerBoxes.html">AnswerBoxes</a></li><li><a href="AssesmentDialogue.html">AssesmentDialogue</a></li><li><a href="Building.html">Building</a></li><li><a href="Button.html">Button</a></li><li><a href="ControllDialogue.html">ControllDialogue</a></li><li><a href="Diagram.html">Diagram</a></li><li><a href="DialogueScene.html">DialogueScene</a></li><li><a href="DialogueScheduler.html">DialogueScheduler</a></li><li><a href="EventDispatcher.html">EventDispatcher</a></li><li><a href="ExperimentTime.html">ExperimentTime</a></li><li><a href="FinalSummary.html">FinalSummary</a></li><li><a href="FormUtil.html">FormUtil</a></li><li><a href="InformerBanner.html">InformerBanner</a></li><li><a href="InteractionScene.html">InteractionScene</a></li><li><a href="LikertScale.html">LikertScale</a></li><li><a href="MainScene.html">MainScene</a></li><li><a href="Management.html">Management</a></li><li><a href="ManagementDialogue.html">ManagementDialogue</a></li><li><a href="Market.html">Market</a></li><li><a href="MarketDialogue.html">MarketDialogue</a></li><li><a href="MedalFeedback.html">MedalFeedback</a></li><li><a href="MessageDialogue.html">MessageDialogue</a></li><li><a href="module-ItemPanel-ItemDisplay.html">ItemPanel~ItemDisplay</a></li><li><a href="module-ItemPanel-ItemPanel.html">ItemPanel~ItemPanel</a></li><li><a href="module-ItemPriceTable-ItemPriceTable.html">ItemPriceTable~ItemPriceTable</a></li><li><a href="module-Item-Item.html">Item~Item</a></li><li><a href="module-Storage-StorageEntry.html">Storage~StorageEntry</a></li><li><a href="module-Storage-StoragePanel.html">Storage~StoragePanel</a></li><li><a href="NewsScene.html">NewsScene</a></li><li><a href="Panel.html">Panel</a></li><li><a href="PartDisplay.html">PartDisplay</a></li><li><a href="Player.html">Player</a></li><li><a href="Preloader.html">Preloader</a></li><li><a href="Process.html">Process</a></li><li><a href="ProfitSummary.html">ProfitSummary</a></li><li><a href="ProgressBar.html">ProgressBar</a></li><li><a href="ProgressBarVertical.html">ProgressBarVertical</a></li><li><a href="RadioButton.html">RadioButton</a></li><li><a href="Storage.html">Storage</a></li><li><a href="StorageDialogue.html">StorageDialogue</a></li><li><a href="TextDialogue.html">TextDialogue</a></li><li><a href="Tutorial.html">Tutorial</a></li><li><a href="Ui.html">Ui</a></li><li><a href="WarningDialogue.html">WarningDialogue</a></li><li><a href="Workshop.html">Workshop</a></li><li><a href="WorkshopDialogue.html">WorkshopDialogue</a></li><li><a href="WorkshopQueue.html">WorkshopQueue</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Experiment Data Explanation.html">Experiment Data Explanation</a></li><li><a href="tutorial-How To Create Question Dialogues.html">How To Create Question Dialogues</a></li><li><a href="tutorial-Important places.html">Important places</a></li><li><a href="tutorial-Set up SociSurvey.html">Set up SociSurvey</a></li><li><a href="tutorial-Uploading Project to SosciSurvey.html">Uploading Project to SosciSurvey</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#addBars">addBars</a></li><li><a href="global.html#addBorder">addBorder</a></li><li><a href="global.html#addDescription">addDescription</a></li><li><a href="global.html#addOptimalProfit">addOptimalProfit</a></li><li><a href="global.html#addPlayerProfit">addPlayerProfit</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#done">done</a></li><li><a href="global.html#getAllOptimalProfits">getAllOptimalProfits</a></li><li><a href="global.html#getMonthOptimalProfit">getMonthOptimalProfit</a></li><li><a href="global.html#interrupt">interrupt</a></li><li><a href="global.html#resetHours">resetHours</a></li><li><a href="global.html#scaleHeight">scaleHeight</a></li><li><a href="global.html#scaleWidth">scaleWidth</a></li><li><a href="global.html#setMeterPercentage">setMeterPercentage</a></li><li><a href="global.html#setProduceAnimation">setProduceAnimation</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#work">work</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: MainScene.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import Item from './Item.js';
+import Management from './Management.js';
+import Market from './Market.js';
+import Player from './Player.js';
+import Workshop from './Workshop.js';
+import Storage from './Storage.js';
+import ExperimentTime from './ExperimentTime.js';
+import * as Constants from './Constants.js';
+import {loadSolution} from './glpkUtility.js';
+import {writeProducedItems,writeProfit,writeProducingStatus,writeLog, writeOrder} from './SosciWriter.js';
+import {getMonthOptimalProfit} from './ProfitSummary.js';
+import ItemPriceTable from './ItemPriceTable.js';
+import DialogueScene from './DialogueScene.js';
+import DialogueSchedule from './DialogueSchedule.js';
+import EventDispatcher from './EventDispatcher.js';
+import Tutorial from './Tutorial.js';
+import { MAX_MONTHS, MONTHS, MONTH_SUBSET } from './GameProperties.js';
+/**
+ * @classdesc
+ * This is the main scene of the game.
+ * Here every game object is displayed as well as the map, the [buildings]{@link Building}, the 
+ * [Player]{@link Player}.
+ * This scene also handels the timing, the camera to enable movement and it stores the 
+ * profits of the player inside a Soci survey variable if activated.
+ * 
+ * @class MainScene
+ * @extends Phaser.Scene
+ * @see [Phaser.Scene]{@link https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html}
+ * 
+ */
+class MainScene extends Phaser.Scene
+{
+    constructor()
+    {
+        super('main');
+    }
+
+    /**
+     * The init function is run before the scene itself is created.
+     * This is useful to initialize variables that are needed at the beginning of the scene.
+     */
+    init()
+    {
+        /**
+         * Indicates that the tutorial is currently active.
+         */
+        this.tutorialPhase = true;
+
+        /**
+         * Indicates that the logging is currently inactive
+         */
+        this.logging = false;
+        
+        /**
+         * This is an iterator that is called if a new month is started, usually after the player skips to the next
+         * month or the time is up.
+         * @type {iterator}
+         */
+        if (MONTH_SUBSET === undefined){
+            this.real_order = this.createMonthIterator(0, MAX_MONTHS);
+        }else{
+            this.real_order = MONTH_SUBSET
+        }
+        this.fisherYatesShuffle(this.real_order);
+        this.monthIterator = [0].concat(this.real_order.slice(0, MONTHS))
+        this.monthLookUP = [...this.monthIterator]
+        console.log(this.monthIterator)
+        /**
+         * The player instance representing the player that is currently playing the game
+         * @type {Player}
+         */
+        this.player = new Player({
+            scene: this,
+            availableWood: Constants.WOOD,
+            availableMetal: Constants.METAL
+        });
+        // Start the game by calling the monthiterator for the first time
+        this.schedule = new DialogueSchedule(this.scene);
+        this.nextMonth();
+
+        /**
+         * The solution of the underlying linear programming problem. It is generated by 
+         * [loadSolution]{@link glpkUtility#loadSolution} and has the following structure:
+         * @property {list} numberOfBeds the number of beds built to work optimal for every month.
+         * @property {list} numberOfBookCases the number of bookcases built every month.
+         * @property {list} numberOfChairs the number of chairs built to work optimal for every month.
+         * @property {list} numberOfTables the number of tables built to work optimal for every month.
+         * @property {number} objective the total optimal profit for the year.
+         */
+        this.lpSolution = loadSolution();
+
+        // Set the volume of the audio effects to the globally defined value.
+        this.sound.setVolume(Constants.SOUND_VOLUME);
+
+        /**
+         * The sound that is played when a new month is started.
+         */
+        this.newMonthSound = this.sound.add('month_change');
+
+        /**
+         * The sound that is played when an Item has been sold.
+         */
+        this.buildSound = this.sound.add('coins');
+    }
+
+    /**
+     * This function is called if a scene is created hence, made visible.
+     * It should be used to render the gameObjects that should be visible inside the scene.
+     * The map and all buildings as well as the ui at the top are rendered here.
+     */
+    create()
+    {
+        this.eventEmitter = EventDispatcher.getInstance();
+        this.eventEmitter.setMainScene(this);
+        this.renderTilemap();
+        this.configureCamera();
+        this.createItems();
+        this.createWorkshops();
+        // launch the ui scene
+        this.scene.launch('ui', {mainScene: this, player: this.player});
+        if (Constants.PRODUCE_PARTS)
+        {
+            // The storage is only used, if parts should be produced.
+            this.storage = new Storage(
+                {
+                    scene: this,
+                    x: 755,
+                    y: 1025,
+                    image: 'storage',
+                    name: 'Storage'
+                });
+        }
+
+        /**
+         * The first management, responsible for chairs and tables.
+         * @type {Management}
+         */
+        this.management_one = new Management(
+        {
+            scene: this,
+            x: 1090,
+            y: 595,
+            image: 'management_one',
+            name: 'Management 1',
+            branch: 0,
+            workshops: this.workshops,
+            items: [this.chair,this.table],
+            storage: this.storage
+        });
+
+        /**
+         * The second management, responsible for bed frames and bookcases.
+         * 
+         * @type {Management}
+         */
+        this.management_two = new Management(
+        {
+            scene: this,
+            x: 950,
+            y:570,
+            image: 'management_two',
+            name: 'Management 2',
+            branch: 1,
+            workshops: this.workshops,
+            items: [this.bed, this.bookcase],
+            storage: this.storage
+        });
+
+        // Pass the corresponding management to each workshop.
+        this.workshopA.management = this.management_one;
+        this.workshopB.management = this.management_one;
+        this.workshopC.management = this.management_two;
+        this.workshopD.management = this.management_two;
+        
+        if (Constants.ENABLE_MARKET){
+        /**
+         * The market, that is used to summarize the profits of the player.
+         * @type {Market}
+         */
+        this.market = new Market(
+            {
+                scene: this,
+                x: 880,
+                y: 1030,
+                image: 'market',
+                name: 'Market'
+            });
+        }
+
+        if (this.tutorialPhase)
+        {
+            this.tutorial = new Tutorial(this);
+            this.tutorial.startTutorial();
+        }
+        
+    }
+
+    /**
+     * Takes a list of values and shuffles them randomly
+     * @param {Array} arr List of values to be shuffled
+     */
+    fisherYatesShuffle(arr){
+        for(var i =arr.length-1 ; i>0 ;i--){
+            var j = Math.floor( Math.random() * (i + 1) ); //random index
+            [arr[i],arr[j]]=[arr[j],arr[i]]; // swap
+        }
+    }
+
+    /**
+     * This function is used to create the items that are needed in the game.
+     * That is, the [Item]{@link Item} chair, table, bed and bookcase.
+     */
+    createItems()
+    {
+        this.chair = new Item(
+            {
+                name: Constants.ITEM_NAME_CHAIR,
+                costs: Constants.CHAIR.costs,
+                profit: Constants.CHAIR.profit,
+                branch: 0,
+                imageCode: 'chair',
+                parts: [{
+                    imageCode: 'chair-leg', 
+                    name: Constants.PART_NAME_CHAIR_LEG,
+                    demand: 4,
+                    costs: {wood: 1, metal: 0, hoursA: 1, hoursB: 0,hoursC: 0,hoursD: 0}
+                }, 
+                {
+                    imageCode: 'chair-back', 
+                    name: Constants.PART_NAME_CHAIR_BACK,
+                    demand: 1,
+                    costs: {wood:  0, metal: 1, hoursA: 0, hoursB: 1, hoursC: 0, hoursD: 0}
+                }]
+            });
+        this.table = new Item(
+            {
+                name: Constants.ITEM_NAME_TABLE,
+                costs: Constants.TABLE.costs,
+                profit: Constants.TABLE.profit,
+                branch: 0,
+                imageCode: 'table',
+                parts: [{
+                    imageCode: 'table-leg',
+                    name: Constants.PART_NAME_TABLE_LEG,
+                    demand: 4,
+                    costs: {wood: 0, metal: 1, hoursA: 1, hoursB: 0, hoursC: 0, hoursD: 0}
+                },
+                {
+                    imageCode: 'table-top',
+                    name: Constants.PART_NAME_TABLE_TOP,
+                    demand: 1,
+                    costs: {wood: 2, metal: 1, hoursA: 0, hoursB: 6, hoursC: 0, hoursD: 0}
+                }]
+            });
+        this.bed = new Item(
+            {
+                name: Constants.ITEM_NAME_BED,
+                costs: Constants.BED.costs,
+                profit: Constants.BED.profit,
+                branch: 1,
+                imageCode: 'bed',
+                parts: [{
+                    imageCode: 'bed-frame', 
+                    name: Constants.PART_NAME_BED_FRAME,
+                    demand: 1,
+                    costs: {wood: 2, metal: 1, hoursA: 0, hoursB: 0, hoursC: 3, hoursD: 0}
+                }, 
+                {
+                    imageCode: 'bed-top', 
+                    name: Constants.PART_NAME_BED_TOP,
+                    demand: 2,
+                    costs: {wood: 1, metal: 1, hoursA: 0, hoursB: 0, hoursC: 0, hoursD: 2}
+                }]
+            });
+        this.bookcase = new Item(
+            {
+                name: Constants.ITEM_NAME_BOOKCASE,
+                costs: Constants.BOOKCASE.costs,
+                profit: Constants.BOOKCASE.profit,
+                branch: 1,
+                imageCode: 'bookcase',
+                parts: [{
+                    imageCode: 'bookcase-leg', 
+                    name: Constants.PART_NAME_BOOKCASE_LEG,
+                    demand: 1,
+                    costs: {wood: 2, metal: 1, hoursA: 0, hoursB: 0, hoursC: 5, hourD: 0}
+                }, 
+                {
+                    imageCode: 'bookcase-top', 
+                    name: Constants.PART_NAME_BOOKCASE_TOP,
+                    demand: 3,
+                    costs: {wood: 1, metal: 2, hoursA: 0, hoursB: 0,hoursC: 0, hoursD: 1}
+                }]
+            });
+        this.items = [this.chair, this.table, this.bed, this.bookcase];
+    }
+
+    /**
+     * This function creates the four workshops that are used in the game.
+     * @see Workshop
+     */
+    createWorkshops()
+    {
+        // Create Workshops
+        this.workshopA = new Workshop(
+            {
+                scene: this,
+                x: 680,
+                y: 970,
+                availableHours: Constants.HOURS_A,
+                image: 'workshop-a',
+                name: 'Workshop A',
+                items: [this.chair.parts[0], this.table.parts[0]],
+                sign: "sign-a"
+            });
+        this.workshopB = new Workshop(
+            {
+                scene: this,
+                x: 940,
+                y: 900,
+                availableHours: Constants.HOURS_B,
+                image: 'workshop-b',
+                name: 'Workshop B',
+                items: [this.chair.parts[1], this.table.parts[1]],
+                sign: "sign-b"
+            });
+        this.workshopC = new Workshop(
+            {
+                scene: this,
+                x: 1040,
+                y: 900,
+                availableHours: Constants.HOURS_C,
+                image: 'workshop-c',
+                name: 'Workshop C',
+                items: [this.bed.parts[0], this.bookcase.parts[0]],
+                sign: 'sign-c'
+            });
+        this.workshopD = new Workshop(
+            {
+                scene: this,
+                x: 880,
+                y: 780,
+                availableHours: Constants.HOURS_D,
+                image: 'workshop-d',
+                name: 'Workshop D',
+                items: [this.bed.parts[1], this.bookcase.parts[1]],
+                sign: 'sign-d'
+            });
+        this.workshops = 
+            [this.workshopA, this.workshopB, this.workshopC, this.workshopD];
+    }
+
+    /**
+     * This function renders all layers of the map, resulting in the final game map.
+     * If you want to edit the map you can load the map file into tiled.
+     * 
+     * @tutorial map_editing
+     */
+    renderTilemap()
+    {
+        const tilemap = this.make.tilemap({ key: 'map' });
+        const tileset_one = tilemap.addTilesetImage('scifi_tilesheet', 'tiles-scifi');
+        const tileset_two = tilemap.addTilesetImage('what', 'tiles-medival');
+        tilemap.createStaticLayer('Background', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Copy of Environment', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Big Objects', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Environment', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/env1', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees1', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees2', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees3', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees4', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees5', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees6', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees7', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees8', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees9', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees10', [tileset_two, tileset_one]);
+        tilemap.createStaticLayer('Group 1/trees11', [tileset_two, tileset_one]);
+    }
+
+    /**
+     * This function configures the camera to show a specific part of the map.
+     * it also enables navigation options for dragging the camera with the mouse.
+     */
+    configureCamera()
+    {
+        this.cameras.main.setBounds(250, 250, 2048, 2048);
+        this.cameras.main.setZoom(0.7);
+        this.cameras.main.centerOn(2048, 1450); // centering where the buildings are
+        this.input.on('pointermove', function (p) //if mointer is moved
+        {
+            if (!p.isDown) return; // do nothing if mouse is not pressed
+            // move the map with the mouse
+            let xDifference = (p.x - p.prevPosition.x) / this.cameras.main.zoom;
+            let yDifference = (p.y - p.prevPosition.y) / this.cameras.main.zoom;
+            this.cameras.main.scrollX -= xDifference;
+            this.cameras.main.scrollY -= yDifference; 
+        });
+    }
+
+    /**
+     * The iterator that is used to simulate the year.
+     * @param {number} [start=0] the number where the year should start
+     * @param {number} [end=12] the number where the iterator should spot.
+     */
+    createMonthIterator(start=0, end=Constants.MONTHS+1)
+    {
+        let months = []
+        for (let i = start; i &lt; end; i++)
+        {
+            months.push(i);
+        }
+        return months
+    }
+
+    /**
+     * This function is triggered if the month should be switched.
+     * it steps the [monthIterator]{@link MainScene#monthIterator} to the next month,
+     * maintains the profits of the player, resets the available time of the workshops
+     * and starts a new timer for the new month that expires to start a new month.
+     * If the last month is over, this function also triggers a final summary that
+     * informs the player that the game is over.
+     */
+    nextMonth()
+    {
+        this.month = this.monthIterator.shift();
+        this.num_month = this.monthLookUP.indexOf(this.month)
+        if (this.num_month == -1) this.num_month = MONTHS;
+        if (!Constants.ON_LOCAL_MACHINE &amp;&amp; this.num_month === 0) writeOrder(this.monthLookUP);
+        //this.player.monthlyProfit.push(0); // extend player profits by a new entry.
+        if (!this.tutorialPhase)
+        {
+            if (this.num_month === 0) this.schedule.addDialogue('controllDialogue', {mainScene: this, title: "", question: "Which furniture item did you have to build to go through the tutorial?", questionNumber: 1, answers:["table", "chair", "bookcase", "bed"], numRightAnswer:0})
+            if (this.num_month === 0) this.schedule.addDialogue('messageDialogue', {mainScene: this, title: "Message from Anna", question: "Hello,\nit's me again, Anna.\nOver the next two months, you have \ntime to get to know our management\nprocesses better. I will give you feedback on\nyour solution at the end of each of these two\nmonths. At the beginning of each month you can\nread in the Furniture Post how much material\nis delivered and how profits are changing.\nI am looking forward to our cooperation!", avatar: 'ann'});
+        }
+        // close active dialogues on month change
+        this.scene.manager.scenes.filter(x => x instanceof DialogueScene &amp;&amp; x.scene.isActive(x.scene.key)).map(x => x.close());
+        if (this.num_month > 0) // if this is not the initial month
+        {
+            if (this.num_month === 1 || this.num_month === 2)  this.schedule.addDialogue('feedbackDialogue', {mainScene: this, height: 400, width: 500});
+            
+            if (this.num_month > 2) this.schedule.addDialogue('assesmentDialogue', {mainScene: this, title: "", question: "", questionNumber: this.monthLookUP[this.num_month-1]});
+
+            if (this.num_month == 5) this.schedule.addDialogue('controllDialogue', {mainScene: this, title: "", question: "Which piece of furniture is not produced in the furniture company?", questionNumber: 2, answers:["table", "chair", "wardrobe","bookcase", "bed"], numRightAnswer:2})
+            // Store values at soscisurvey
+            //if (this.num_month === 6) this.schedule.addDialogue('assesmentDialogue', {mainScene: this, title: "", question: "", questionNumber: 2});
+            
+            if (!Constants.ON_LOCAL_MACHINE &amp;&amp; !this.tutorialPhase) this.storeValues(this.monthLookUP[this.num_month-1]);
+            //play the sound for the next month
+            this.newMonthSound.play();
+            // load the newspaper to give the player a pause.
+            if (!Constants.MONTHLY_PAUSE) this.showPriceChanges();
+ 
+        }
+        // if there are workshops, reset them. At the very beginning there are no workshops yet,
+        // they will be skipped.
+        if (this.workshops)
+        {
+            if (Constants.MONTHLY_RESET &amp;&amp; !this.tutorialPhase) this.resetProduction();
+            this.workshops.forEach(workshop => {
+                workshop.resetHours();
+                if (Constants.MONTHLY_RESET) workshop.interrupt();
+            });
+        }
+        // if this is not the last month, initialte a new timer.
+        if (!(this.num_month == MONTHS))
+        {
+            if (Constants.MONTHLY_PAUSE &amp;&amp; !this.tutorialPhase)
+            {
+                // display the newpaper scene.
+                this.schedule.addDialogue('newsScene', {mainScene: this, height: 60, width: 75});
+                if (this.num_month ===2) this.schedule.addDialogue('messageDialogue', {mainScene: this, title: "Message from Anna", question: "Hello,\nthat was a good training period,\nI'm sure that from now on you will be able\nto cope without feedback and manage our\nproduction very well.\nGood luck!", avatar: 'ann'});
+                //if (this.num_month === 8) this.schedule.addDialogue('messageDialogue', {mainScene: this, title: "Nachricht von Anna", question: "Hallo, \nwir sind sehr zufrieden mit deiner \nArbeit und befördern dich zu einer \nneuen Managementposition in unserer Firma! \nDamit deine alten Aufgaben aber weiter \nerledigt werden, arbeite bitte deinen \nneuen Kollegen Mike ein. Dafür manage \nbitte die Produktion in den kommenden \nMonaten. Mike wird deine Entscheidungen \nnachverfolgen und dir Fragen zu ihnen stellen.", avatar: 'ann'}); 
+                //if (this.num_month === 8) this.schedule.addDialogue('textDialogue', {mainScene: this, avatar: 'mike', title: "Frage von Mike", question: "Was sollte ich tun um eine \nmöglichst gute Lösung zu finden?", questionNumber: 1});
+                //if (this.num_month === 10) this.schedule.addDialogue('textDialogue', {mainScene: this, avatar: 'mike', title: "Frage von Mike", question: "Wie finde ich jeden Monat heraus, \nwas ich bauen soll?", questionNumber: 2});
+            }
+            else
+            {
+                // start the timer for the next month
+                this.startTimer();
+            }
+        }
+        else
+        {
+            // store the final values and start the final summary.
+            if (!Constants.ON_LOCAL_MACHINE)
+            {
+                this.storeValues(this.monthLookUP[Constants.MONTHS -1]);
+
+            } 
+            this.schedule.addDialogue('finalSummary', {
+                mainScene: this,
+                height: 400,
+                width: 500
+            });
+        }
+        this.schedule.run();
+    }
+
+    /**
+     * This function stores the profit and produced items from player and model
+     * from the past month to SosciSurvey variables.
+     * @param {number} month the month for which the profits should be stored.
+     */
+    storeValues(month)
+    {
+        let monthValue = month;
+        let playerItems = this.player.producedItems;
+        writeProfit('player', monthValue,this.player.monthlyProfit[monthValue]);
+        writeProfit('model', monthValue,getMonthOptimalProfit(this.lpSolution, monthValue));
+        writeProducedItems('player',monthValue,{
+            beds: this.player.producedItems.beds[monthValue],
+            bookcases: playerItems.bookcases[monthValue],
+            tables: playerItems.tables[monthValue],
+            chairs: playerItems.chairs[monthValue]
+        });
+        writeProducedItems('model',monthValue,{
+            beds: this.lpSolution.numberOfBeds[monthValue],
+            bookcases: this.lpSolution.numberOfBookCases[monthValue],
+            tables: this.lpSolution.numberOfTables[monthValue],
+            chairs: this.lpSolution.numberOfChairs[monthValue]
+        });
+
+    }
+
+    /**
+     * This function renders a new Price table, that informs the player of the price changes.
+     * It is only be used if the option [MONTHLY_PAUSE]{@link module:GameProperties#MONTHLY_PAUSE} is set to `false`.
+     * @see ItemPriceTable
+     */
+    showPriceChanges()
+    {
+        let newPrices = [];
+        let oldPrices = [];
+        this.items.forEach(item => 
+            {
+                // get the prices of the new month and the prices of the old month
+                newPrices.push(item.profit[this.month]);
+                oldPrices.push(item.profit[this.monthLookUP[this.num_month-1]]);
+            });
+        // render a new price table.
+        let priceTable = new ItemPriceTable(
+        {
+            scene: this,
+            x: 1200,
+            y: 300,
+            pricesOld: oldPrices,
+            pricesNew: newPrices
+        });
+        // start the animation of the price table
+        priceTable.run();
+
+    }
+
+
+    /**
+     * Get information whether one or more workshops are currently producing.
+     * @returns {number} 0 if none of the workshops are currently producing, 1 else.  
+     */
+    getProductionStatus()
+    {
+        let status = 0;
+        this.workshops.forEach(workshop =>
+        {
+            if(workshop.busy){
+                status= 1;
+            }
+        });
+        return status;
+    }
+
+    /**
+     * This function stops all workshops and deletes available 
+     * parts inside the storage. It also writes a flag indicating if a workshop was active during
+     * the month change. This helps to see if a player had not enough time to finish all parts.
+     * @see Workshop
+     * @see SosciWriter#writeProducingStatus
+     */
+    resetProduction()
+    {
+        if (this.workshops)
+        {
+            let status = this.getProductionStatus();
+            if (!Constants.ON_LOCAL_MACHINE &amp;&amp; this.num_month != 0)
+            {
+                if (this.num_month &lt; Constants.MONTHS)
+                {
+                    // inform sosci survey if the workshops were busy during month change
+                    writeProducingStatus(this.monthLookUP[this.num_month-1],status);
+                }else{
+                    writeProducingStatus(this.monthLookUP[Constants.MONTHS -1],status);
+                }
+            }
+
+        }
+        if (Constants.PRODUCE_PARTS)
+        {
+            // delete all parts inside the storage.
+            Object.keys(this.storage.parts).forEach(key => 
+                {
+                    this.storage.parts[key] = 0;
+                }
+            );
+        }
+        
+    }
+
+    /**
+     * Starts the timer for the month.
+     * The duration of the timer is specified by the option [MONTH_SECONDS]{@link module:GameProperties#MONTH_SECONDS}.
+     */
+    startTimer()
+    {
+        let delayValue;
+        if (this.num_month) delayValue = Constants.MONTH_SECONDS[this.num_month]*1000;
+        else delayValue = Constants.MONTH_SECONDS[11]*1000;
+        
+        this.timer = this.time.addEvent(
+            {
+                delay: delayValue,
+                callback: this.nextMonth,
+                callbackScope: this
+            }
+        );
+        if (!Constants.ON_LOCAL_MACHINE){
+            this.controllTimer = new ExperimentTime({
+                delayValue: delayValue
+            })
+        }
+    }
+}
+
+export default MainScene;</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a>
+	on 11.08.2022 using the <a
+	href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+                navbarOffset: 10,
+		smoothScrolling: true
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+  $( "table" ).each( function () {
+    var $this = $( this );
+    $this.addClass('table');
+  } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

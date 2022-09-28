@@ -1,0 +1,31 @@
+case 141:
+
+AS01_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS01_02 - Warum schätzt du deine Leistung so ein?
+Ich habe das Material und die Zeit gut ausgenutzt 
+
+AS02_01 - Wie gut schätzt du deine Lösung ein?
+ eher gut
+
+AS02_02 - Warum schätzt du deine Leistung so ein?
+Habe ganz gut mit den Materialien gehaushaltet, bis mir die Zeit ausgegangen ist. Vielleicht hätte ich ein Regal weniger machen sollen und dafür ein Bett mehr. 
+
+AN01_01 - Was sollte ich tun um eine möglichst gute Lösung zu finden?
+Zuerst achtest du darauf was aktuell den größten Profit einbringt (i.d.R. entweder Regale oder Betten), darauf legst du dann den Fokus. Dann achtest du darauf, inwieweit diese Produktion deine Materialien ins Ungleichgewicht bringt und produzierst dann entweder entsprechend Tische oder Stühle, die stark einseitig Material benötigen. 
+
+AN01_02 - Wie finde ich jeden Monat heraus, was ich bauen soll?
+Du schaust, ob die Materialien ähnlich verteilt sind, dann produzierst du zuerst das was am Meisten einbringt und gleichst dann mit den anderen Produkten aus. 
+
+FB01_01 - Wie gut ist meine Lösung? (Mike, suboptimal)
+ eher gut
+
+FB01_02 - Was habe ich richtig/falsch gemacht? (Mike, suboptimal)
+Das mit den Regalen war gut, die haben am meisten Profit eingebracht. Du hättest aber mehr Tische statt Stühle produzieren sollen, weil die mehr einbringen. 
+
+FB02_01 - Wie gut ist meine Lösung? (Mike, optimal)
+ sehr gut
+
+FB02_02 - Was habe ich richtig/falsch gemacht? (Mike, optimal)
+Das hast du gut gemacht, der Fokus liegt auf den teureren Regalen aber du hast übrige Zeit/ übriges Material in ein Bett investiert. Die Stühle gleichen den Materialverbrauch aus und bringen fast genauso viel ein wie Tische. 
